@@ -1,0 +1,145 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Studie zu sozialen Bewegungen: <br>
+Demonstrationen und Politiker
+{% endblock %}
+
+{% block styles %}
+<style>
+table { border-collapse: collapse; }
+/* we are using a line to separate the answer options from "I dont't know" */
+.line {border-right:  solid 1px rgb(220,220,220);}
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'persist-raw.js' %}"></script>
+<script>
+    var time = new Date();
+    var time = time.toISOString();
+    document.getElementById('time').value = time;
+</script>
+{% endblock %}
+
+
+{% block content %}
+<input id="time" type="hidden" name="sm_time_demonstrationpage" />
+
+<!-- table asking about demonstration experience -->
+<div class="mb-3 bg-light border pt-2 pb-2 px-2 ">
+    <fieldset>
+        <div class="table-responsive">
+        <div class="table">
+            <table class="table w-auto"> Inwieweit stimmen Sie den Folgenden Aussagen zu oder nicht zu?
+                <tr>
+                    <td style="width: 20%"></td>
+                    <th style="width: 13%">
+                        <p class="mb-0"></p><br><br>trifft nicht zu</p>
+                    </th>
+                    <th style="width: 13%">
+                        <p class="mb-0"></p>
+                    </th>
+                    <th style="width: 13%">
+                        <p class="mb-0"></p>
+                    </th>
+                    <th style="width: 13%">
+                        <p class="mb-0"></p>
+                    </th>
+                    <th style="width: 13%">
+                        <p class="mb-0"><br><br>trifft zu </p>
+                    </th>
+                    <th style="width: 13%">
+                        <p class="mb-0">Weiß nicht/ <br> Keine Angabe</p>
+                    </th>
+                </tr>
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th class='line'>5</th>
+                        <th ></th>
+                    </tr>
+                    <!-- demonstration_change -->
+                    <tr>
+                        <th>Durch Demonstrationen können keine politische Veränderungen bewirkt werden. 
+                        </th>
+                        <th><input class="persist" type="radio" name="sm_demonstration_change" value="1"></th>
+                        <th><input class="persist" type="radio" name="sm_demonstration_change" value="2"></th>
+                        <th><input class="persist" type="radio" name="sm_demonstration_change" value="3"></th>
+                        <th><input class="persist" type="radio" name="sm_demonstration_change" value="4"></th>
+                        <th class='line'><input class="persist" type="radio" name="sm_demonstration_change" value="5"></th>
+                        <th><input class="persist" type="radio" name="sm_demonstration_change" value="-888" style= 'text-align:right'></th>
+                    </tr>
+                    <!-- demonstration_democracy -->
+                    <tr>
+                        <th>Demonstrationen sind ein wichtiger Bestandteil einer funktionierenden Demokratie.</th>
+                        <th><input class="persist" type="radio" name="sm_demonstration_democracy" value="1"></th>
+                        <th><input class="persist" type="radio" name="sm_demonstration_democracy" value="2"></th>
+                        <th><input class="persist" type="radio" name="sm_demonstration_democracy" value="3"></th>
+                        <th><input class="persist" type="radio" name="sm_demonstration_democracy" value="4"></th>
+                        <th class='line'><input class="persist" type="radio" name="sm_demonstration_democracy" value="5"></th>
+                        <th><input class="persist" type="radio" name="sm_demonstration_democracy" value="-888"></th>
+                    </tr>
+                    <!-- demonstration_views -->
+                    <tr>
+                        <th>Mit der Teilnahme an Demonstrationen kann ich meinen politischen Ansichten Ausdruck verleihen.</th>
+                        <th><input class="persist" type="radio" name="sm_demonstration_views" value="1"></th>
+                        <th><input class="persist" type="radio" name="sm_demonstration_views" value="2"></th>
+                        <th><input class="persist" type="radio" name="sm_demonstration_views" value="3"></th>
+                        <th><input class="persist" type="radio" name="sm_demonstration_views" value="4"></th>
+                        <th class='line'><input class="persist" type="radio" name="sm_demonstration_views" value="5"></th>
+                        <th><input class="persist" type="radio" name="sm_demonstration_views" value="-888"></th>
+                    </tr>
+                    <!-- politicians -->
+                    <tr>
+                        <th>Die Politiker*innen kümmern sich nicht viel darum, was Leute wie ich denken.</th>
+                        <th><input class="persist" type="radio" name="sm_politicians" value="1"></th>
+                        <th><input class="persist" type="radio" name="sm_politicians" value="2"></th>
+                        <th><input class="persist" type="radio" name="sm_politicians" value="3"></th>
+                        <th><input class="persist" type="radio" name="sm_politicians" value="4"></th>
+                        <th class='line'><input class="persist" type="radio" name="sm_politicians" value="5"></th>
+                        <th><input class="persist" type="radio" name="sm_politicians" value="-888"></th>
+                    </tr>
+                    <!-- influence -->
+                    <tr>
+                        <th>Leute wie ich haben keinen Einfluss darauf, was die Regierung tut.</th>
+                        <th><input class="persist" type="radio" name="sm_influence" value="1"></th>
+                        <th><input class="persist" type="radio" name="sm_influence" value="2"></th>
+                        <th><input class="persist" type="radio" name="sm_influence" value="3"></th>
+                        <th><input class="persist" type="radio" name="sm_influence" value="4"></th>
+                        <th class='line'><input class="persist" type="radio" name="sm_influence" value="5"></th>
+                        <th><input class="persist" type="radio" name="sm_influence" value="-888"></th>
+                    </tr>
+                    <!-- interests -->
+                    <tr>
+                        <th>Die Politiker*innen bemühen sich im Allgemeinen darum die Interessen der Bevölkerung zu vetreten.</th>
+                        <th><input class="persist" type="radio" name="sm_interests" value="1"></th>
+                        <th><input class="persist" type="radio" name="sm_interests" value="2"></th>
+                        <th><input class="persist" type="radio" name="sm_interests" value="3"></th>
+                        <th><input class="persist" type="radio" name="sm_interests" value="4"></th>
+                        <th class='line'><input class="persist" type="radio" name="sm_interests" value="5"></th>
+                        <th><input class="persist" type="radio" name="sm_interests" value="-888"></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </fieldset>
+</div>
+{{formfield_errors 'sm_demonstration_change' }}
+{{formfield_errors 'sm_demonstration_democracy' }}
+{{formfield_errors 'sm_demonstration_views' }}
+{{formfield_errors 'sm_politicians' }}
+{{formfield_errors 'sm_influence' }}
+{{formfield_errors 'sm_interests' }}
+
+<button class="otree-btn-next btn btn-primary next-button otree-next-button">
+    Weiter
+</button>
+
+{% endblock %}

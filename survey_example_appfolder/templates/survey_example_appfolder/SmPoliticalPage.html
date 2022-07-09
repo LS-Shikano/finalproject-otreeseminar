@@ -1,0 +1,146 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Studie zu sozialen Bewegungen: <br>
+Politische Einstellungen
+{% endblock %}
+
+{% block styles %}
+<style>
+table { border-collapse: collapse; }
+/* we are using a line to separate the answer options from "I dont't know" */
+.line {border-right:  solid 1px rgb(220,220,220);}
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'persist-raw.js' %}"></script>
+<script>
+    var time = new Date();
+    var time = time.toISOString();
+    document.getElementById('time').value = time;
+</script>
+{% endblock %}
+
+{% block content %}
+<input id="time" type="hidden" name="sm_time_politicalpage" />
+
+<br>
+
+<!-- table asking about political preferences -->
+<div class="mb-3 bg-light border pt-2 pb-2 px-2 ">
+    <fieldset>
+        <div class="table-responsive">
+        <div class="table">
+            <table class="table w-auto"> Inwieweit stimmen Sie den Folgenden Aussagen zu oder nicht zu?
+                <tr>
+                    <td style="width: 20%"></td>
+                    <th style="width: 13%">
+                        <p class="mb-0"></p><br><br>trifft nicht zu</p>
+                    </th>
+                    <th style="width: 13%">
+                        <p class="mb-0"></p>
+                    </th>
+                    <th style="width: 13%">
+                        <p class="mb-0"></p>
+                    </th>
+                    <th style="width: 13%">
+                        <p class="mb-0"></p>
+                    </th>
+                    <th style="width: 13%">
+                        <p class="mb-0"><br><br>trifft zu </p>
+                    </th>
+                    <th style="width: 13%">
+                        <p class="mb-0">Weiß nicht/ <br> Keine Angabe</p>
+                    </th>
+                </tr>
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th class='line'>5</th>
+                        <th ></th>
+                    </tr>
+                    <!-- political_participation -->
+                    <tr>
+                        <th>Die ganze Politik ist so kompliziert, dass jemand wie ich gar nicht versteht, was vorgeht.
+                        </th>
+                        <th><input class="persist" type="radio" name="sm_missing_knowledge" value="1"></th>
+                        <th><input class="persist" type="radio" name="sm_missing_knowledge" value="2"></th>
+                        <th><input class="persist" type="radio" name="sm_missing_knowledge" value="3"></th>
+                        <th><input class="persist" type="radio" name="sm_missing_knowledge" value="4"></th>
+                        <th class='line'><input class="persist" type="radio" name="sm_missing_knowledge" value="5"></th>
+                        <th><input class="persist" type="radio" name="sm_missing_knowledge" value="-888" style= 'text-align:right'></th>
+                    </tr>
+                    <!-- own_knowledge -->
+                    <tr>
+                        <th>Im Allgemeinen weiß ich eher weniger über Politik.</th>
+                        <th><input class="persist" type="radio" name="sm_own_knowledge" value="1"></th>
+                        <th><input class="persist" type="radio" name="sm_own_knowledge" value="2"></th>
+                        <th><input class="persist" type="radio" name="sm_own_knowledge" value="3"></th>
+                        <th><input class="persist" type="radio" name="sm_own_knowledge" value="4"></th>
+                        <th class='line'><input class="persist" type="radio" name="sm_own_knowledge" value="5"></th>
+                        <th><input class="persist" type="radio" name="sm_own_knowledge" value="-888"></th>
+                    </tr>
+                    <!-- general_knowledge -->
+                    <tr>
+                        <th>Die Durschnittsbürger*innen verstehen nur wenig von Politik.</th>
+                        <th><input class="persist" type="radio" name="sm_general_knowledge" value="1"></th>
+                        <th><input class="persist" type="radio" name="sm_general_knowledge" value="2"></th>
+                        <th><input class="persist" type="radio" name="sm_general_knowledge" value="3"></th>
+                        <th><input class="persist" type="radio" name="sm_general_knowledge" value="4"></th>
+                        <th class='line'><input class="persist" type="radio" name="sm_general_knowledge" value="5"></th>
+                        <th><input class="persist" type="radio" name="sm_general_knowledge" value="-888"></th>
+                    </tr>
+                    <!-- future -->
+                    <tr>
+                        <th>Wenn ich an die Zukunft denke, kann ich eigentlich sehr zuversichtlich sein.</th>
+                        <th><input class="persist" type="radio" name="sm_future" value="1"></th>
+                        <th><input class="persist" type="radio" name="sm_future" value="2"></th>
+                        <th><input class="persist" type="radio" name="sm_future" value="3"></th>
+                        <th><input class="persist" type="radio" name="sm_future" value="4"></th>
+                        <th class='line'><input class="persist" type="radio" name="sm_future" value="5"></th>
+                        <th><input class="persist" type="radio" name="sm_future" value="-888"></th>
+                    </tr>
+                    <!-- unsure -->
+                    <tr>
+                        <th>Wenn ich die Ereignisse seit Anfang der Pandemie betrachte, werde ich unsicher.</th>
+                        <th><input class="persist" type="radio" name="sm_unsure" value="1"></th>
+                        <th><input class="persist" type="radio" name="sm_unsure" value="2"></th>
+                        <th><input class="persist" type="radio" name="sm_unsure" value="3"></th>
+                        <th><input class="persist" type="radio" name="sm_unsure" value="4"></th>
+                        <th class='line'><input class="persist" type="radio" name="sm_unsure" value="5"></th>
+                        <th><input class="persist" type="radio" name="sm_unsure" value="-888"></th>
+                    </tr>
+                    <!-- olddays -->
+                    <tr>
+                        <th>Früher waren die Leute besser dran, weil jede*r wusste, was er zu tun hatte.</th>
+                        <th><input class="persist" type="radio" name="sm_olddays" value="1"></th>
+                        <th><input class="persist" type="radio" name="sm_olddays" value="2"></th>
+                        <th><input class="persist" type="radio" name="sm_olddays" value="3"></th>
+                        <th><input class="persist" type="radio" name="sm_olddays" value="4"></th>
+                        <th class='line'><input class="persist" type="radio" name="sm_olddays" value="5"></th>
+                        <th><input class="persist" type="radio" name="sm_olddays" value="-888"></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </fieldset>
+</div>
+</div>
+{{formfield_errors 'sm_missing_knowledge' }}
+{{formfield_errors 'sm_own_knowledge' }}
+{{formfield_errors 'sm_general_knowledge' }}
+{{formfield_errors 'sm_future' }}
+{{formfield_errors 'sm_unsure' }}
+{{formfield_errors 'sm_olddays' }}
+
+<button class="otree-btn-next btn btn-primary next-button otree-next-button">
+    Weiter
+</button>
+
+{% endblock %}

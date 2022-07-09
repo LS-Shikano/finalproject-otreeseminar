@@ -1,0 +1,69 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+var time = new Date();
+var time = time.toISOString();
+document.getElementById('time').value = time;
+ 
+//alternatively check with window screen size or if touch screen is available
+var ua = navigator.userAgent;
+if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {device_type = 1;}//tablet, ipad;
+if (/Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|we{b)OS|Opera M(obi|ini)/.test(ua)) 
+    {device_type = 2} //mobile phone
+else {device_type = 3}; //desktop
+  
+if (device_type == 3 && navigator.maxTouchPoints > 2 //guarantees a touch-screen 
+&& /MacIntel/.test(navigator.platform)){device_type = 4}; //iPad iOS
+document.getElementById('device_type').value = device_type; 
+
+if (ua.indexOf("Win") != -1){os = 1}; //windows
+if (ua.indexOf("Mac") != -1){os = 2}; //Macintosh
+if (ua.indexOf("Linux") != -1){os = 3}; //Linux;
+if (ua.indexOf("Android") != -1){os = 4}; // Android
+if (ua.indexOf("like Mac") != -1){os = 5}; //iOS
+document.getElementById('operating_system').value = os; 
+
+//alternative version of catching the device type
+var screen_width = screen.width;
+document.getElementById('screen_width').value =screen_width;
+var screen_height = screen.height;
+document.getElementById('screen_height').value = screen_height;
+</script>
+{% endblock %}
+
+{% block content %}
+<!-- META DATA -->
+<input id="time" type="hidden" name="time_welcome"/>
+<input id="device_type" type="hidden" name="device_type"/>
+<input id="operating_system" type="hidden" name="operating_system"/>
+<input id="screen_width" type="hidden" name="screen_width"/>
+<input id="screen_height" type="hidden" name="screen_height"/>
+<br>
+<div class="mb-3 bg-light border pt-2 pb-2 px-2 ">
+<!-- Welcome Text for the participants -->
+<p>Willkommen zu dieser Umfrage! 
+<br>
+<br>
+Wir sind Forschende von der Universität Konstanz. Im Folgenden sind wir an Ihrer Meinung zu drei verschiedenen Themen interessiert, zu dem Sie jeweils einen Teil an Fragen beantworten sollen.
+<br>
+<br>
+Es gibt dabei keine falschen Antworten. Bitte antworten Sie diese sorgfältig. Nur auf diese Weise können wir die öffentliche Meinung realistisch einschätzen. Beachten Sie, dass Sie während der Umfrage nicht zurück gehen können.
+<br>
+<br>
+Ihre Daten werden nur für wissenschaftliche Zwecke benutzt und so gespeichert und analysiert, dass keine Rückschlüsse auf spezifische Individuen möglich sind.
+<br>
+<br>
+Mit einem Klick auf 'Weiter' können Sie starten. 
+<br></p>
+</div>
+
+<button class="otree-btn-next btn btn-primary next-button otree-next-button">
+    Weiter
+</button>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+    window.onload = function () {
+    //import variables 
+        var label = {{ participant_label }}; //tic number
+    //build new url link
+    //todo: replace link
+        var complete_link = "https://mingle.respondi.com/s/1608318/ospe.php3?c_0002=1&return_tic=" + label; 
+        window.location.replace(complete_link);
+    };
+</script>
+{% endblock %}
+
+{% block content %}
+
+<br>
+<div class="mb-3 bg-light border pt-2 pb-2 px-2 ">
+Vielen Dank für ihre Teilnahme an dem letzten Teil der Studie. <br>
+Bitte klicken Sie auf 'Absenden' um die gesamte Studie abzuschliessen und wieder zurück zu dem Anbieter geleitet zu werden.
+</div>
+<br>
+<br>
+<button class="otree-btn-next btn btn-primary next-button otree-next-button">
+    Absenden
+</button>
+{% endblock %}
