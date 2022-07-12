@@ -25,6 +25,20 @@ class Subsession(BaseSubsession):
         for p in self.get_players():
             p.sm_group_assignment = random.Random().randint(1, 3)
 
+            p.ch_group_assignment = random.Random().randint(1, 12)
+            # group 1: casual/happy/easy
+            # group 2: casual/happy/medium
+            # group 3: casual/happy/hard
+            # group 4: casual/neutral/easy
+            # group 5: casual/neutral/medium
+            # group 6: casual/neutral/hard
+            # group 7: business/happy/easy
+            # group 8: business/happy/medium
+            # group 9: business/happy/hard
+            # group 10: business/neutral/easy
+            # group 11: business/neutral/medium
+            # group 12: business/neutral/hard
+
 
 class Group(BaseGroup):
     #gender groups
@@ -75,6 +89,7 @@ class Player(BasePlayer):
     time_quotapage = models.StringField(initial=-999)
     time_endpage = models.StringField(initial=-999)
 
+
 # Social Movement (sm) variables
     #general variables
     sm_group_assignment = models.IntegerField(initial=-999)
@@ -112,3 +127,44 @@ class Player(BasePlayer):
     sm_interests = models.IntegerField(initial=-999)
     #EndPage
     sm_time_endpage = models.StringField(initial=-999)
+
+
+    # Ballot variables
+
+    # Charisma (Ch) variables
+    ch_group_assignment = models.IntegerField()
+
+    # image/audi page
+    ch_time_image_audio = models.StringField(initial='-999')
+    ch_im = models.StringField(initial='-999')
+    ch_audio = models.StringField(initial='-999')
+    ch_browserType = models.StringField(initial='-999')
+
+    # check speech
+    ch_time_check_rede = models.StringField(initial='-999')
+    ch_check_question = models.IntegerField(blank=True, initial='-999')
+    reasonDescription = models.StringField(blank=True, label="")
+
+    # error handling for the content questions, participants have to give an answer
+    def ch_check_question_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5]:
+            return "Bitte beantworten Sie die Frage"
+
+    # survey charisma page
+    ch_time_survey_charisma = models.StringField(initial='-999')
+    ch_time_survey_charisma2 = models.StringField(initial='-999')
+    ch_Q1 = models.IntegerField(blank=True, initial='-999')
+    ch_Q2 = models.IntegerField(blank=True, initial='-999')
+    ch_Q3 = models.IntegerField(blank=True, initial='-999')
+    ch_Q4 = models.IntegerField(blank=True, initial='-999')
+    ch_Q5 = models.IntegerField(blank=True, initial='-999')
+    ch_Q6 = models.IntegerField(blank=True, initial='-999')
+    ch_Q7 = models.IntegerField(blank=True, initial='-999')
+    ch_Q8 = models.IntegerField(blank=True, initial='-999')
+    ch_Q9 = models.IntegerField(blank=True, initial='-999')
+    ch_Q10 = models.IntegerField(blank=True, initial='-999')
+    ch_Q11 = models.IntegerField(blank=True, initial='-999')
+    ch_Q12 = models.IntegerField(blank=True, initial='-999')
+
+    # end page
+    ch_end_of_survey = models.StringField(initial='-999')

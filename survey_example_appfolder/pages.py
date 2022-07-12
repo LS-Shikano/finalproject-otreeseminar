@@ -14,6 +14,7 @@ class QuotaPage(Page):
     def before_next_page(self):
         filtering(self)
 
+
 #Social Movement Pages
 class SmWelcome(Page):
     form_model = Player
@@ -44,6 +45,55 @@ class SmDemonstrationPage(Page):
 class SmEndPage(Page):
     form_model = Player
     form_fields=['sm_time_endpage']
+
+# Ballot pages
+
+# Charisma Pages
+class ChIntro(Page):
+    form_model = Player
+
+
+class ChPictureAudio(Page):
+    form_model = Player
+    form_fields = ["ch_time_image_audio", "ch_im", "ch_audio", "ch_browserType"]
+    def vars_for_template(self):
+        return {'ch_group_assignment': self.player.ch_group_assignment}
+
+class ChCheckRede(Page):
+    form_model = Player
+    form_fields = ["ch_time_check_rede" ,"ch_check_question", "reasonDescription"]
+
+class ChSurvey_Charisma(Page):
+
+    def vars_for_template(self):
+        return{"ch_check_question": self.player.ch_check_question}
+
+    # if participant didn't listen to speech, they won't get the questionnaire
+    def is_displayed(self):
+        return self.player.ch_check_question != 4 and self.player.ch_check_question != 5
+
+    form_model = Player
+    form_fields = ["ch_Q1", "ch_Q2", "ch_Q3", "ch_Q4", "ch_Q5", "ch_Q6", "ch_Q7", "ch_Q8", "ch_Q9", "ch_Q10", "ch_Q11",
+                   "ch_Q12", "ch_time_survey_charisma"]
+
+class ChSurvey_Charisma2(Page):
+
+    def vars_for_template(self):
+        return{"ch_check_question": self.player.ch_check_question}
+
+    # if participant didn't listen to speech, they won't get the questionnaire
+    def is_displayed(self):
+        return self.player.ch_check_question != 4 and self.player.ch_check_question != 5
+
+    form_model = Player
+    form_fields = ["ch_Q1", "ch_Q2", "ch_Q3", "ch_Q4", "ch_Q5", "ch_Q6", "ch_Q7", "ch_Q8", "ch_Q9", "ch_Q10", "ch_Q11",
+                   "ch_Q12", "ch_time_survey_charisma2"]
+
+
+class ChEndPage(Page):
+    form_model = Player
+    form_fields = ["ch_end_of_survey"]
+
     
 
 #General EndPage
@@ -63,8 +113,7 @@ page_sequence = [
                 #general pages
                 Welcome,
                 QuotaPage,
-                #Charisma Pages
-                
+
                 #Social MovementPages
                 SmWelcome,
                 SmTreatmentPage,
@@ -72,7 +121,17 @@ page_sequence = [
                 SmPoliticalPage,
                 SmDemonstrationPage,
                 SmEndPage,
+
+
                 #Ballot Pages
+
+                # Charisma Pages
+                ChIntro,
+                ChPictureAudio,
+                ChCheckRede,
+                ChSurvey_Charisma,
+                ChSurvey_Charisma2,
+                ChEndPage,
 
                 #General EndPage
                 EndPage,

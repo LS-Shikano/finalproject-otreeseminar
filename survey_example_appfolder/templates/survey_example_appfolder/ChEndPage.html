@@ -1,0 +1,22 @@
+{% extends "global/GlobalTimeStemp.html" %}
+{% load otree static %}
+
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    <input id="time_popout" type="hidden" name="ch_end_of_survey" />
+<br>
+<h2> Allgemeine Fragen zu Ihrer Person </h2>
+<hr>
+
+    Hiermit ist der Teil der Umfrage agbeschlossen, der sich auf die Rede bezieht. Im Folgenden werden Ihnen noch ein paar allgemeinere Fragen gestellt.
+
+    <br>
+    <br>
+    <button class="otree-btn-next btn btn-primary next-button otree-next-button">
+    Weiter
+</button>
+
+{% endblock %}

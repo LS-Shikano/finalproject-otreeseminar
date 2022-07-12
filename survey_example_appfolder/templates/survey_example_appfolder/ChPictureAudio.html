@@ -1,0 +1,242 @@
+{% extends "global/GlobalTimeStemp.html" %}
+{% load otree static %}
+
+
+{% block title %}
+{% endblock %}
+{% block style %}
+      <!-- border-radius: 25px; to get "round" edges (fireofx)
+      background-color: black; (sieht in chrome hässlich aus)-->
+
+    <style>
+
+    .media_player {
+        width: 35vh;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .image_class{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h2 {text-align: center;}
+
+    .wrapper {
+    text-align: center;
+    }
+
+    .button {
+    position: center;
+    top: 50%;
+    }
+
+
+    </style>
+{% endblock %}
+{% block content %}
+
+<input id="time_popout" type="hidden" name="ch_time_image_audio" /> <!--measures when entering the page -->
+<input id="image" type="hidden" name="ch_im" value = "-999" /> <!--saves which images was used, value assigned below -->
+<input id="ch_audio_gr" type="hidden" name="ch_audio" value = "-999" /> <!--saves which audio was used, value assigned below -->
+<input id ="browserId"   type = "hidden" name ="ch_browserType" value ="-999" /> <!--saves which browser was used, value assigned below -->
+<br>
+
+<h2> Bitte hören Sie sich die Audiodatei an </h2>
+    <hr>
+
+    <div id="image_div"></div>
+
+    <div id="media_div" ></div>
+    <script>
+
+    // detect browser type
+     let userAgent = navigator.userAgent;
+         let browserName;
+
+         if(userAgent.match(/chrome|chromium|crios/i)){
+             browserName = "chrome";
+           }else if(userAgent.match(/firefox|fxios/i)){
+             browserName = "firefox";
+           }  else if(userAgent.match(/safari/i)){
+             browserName = "safari";
+           }else if(userAgent.match(/opr\//i)){
+             browserName = "opera";
+           } else if(userAgent.match(/edg/i)){
+             browserName = "edge";
+           }else{
+             browserName="No browser detection";
+           }
+
+        document.getElementById("browserId").value = browserName
+        console.log(browserName)
+
+
+
+
+   const media_div = document.getElementById("media_div")
+
+   var med = document.createElement("media");
+   x = navigator.mediaDevices.enumerateDevices()
+   console.log(x)
+        //media_div.appendChild(med)
+
+   console.log("secon try")
+
+
+
+
+
+    var group_assignment = {{ ch_group_assignment}};
+    const image_div = document.getElementById("image_div")
+    function show_image(src) {
+        var img = document.createElement("img");
+        img.src = src;
+        const wid = window.innerHeight * 0.35
+        img.width = wid
+        image_div.appendChild(img)
+            .className = "image_class";
+    }
+
+    const im_gr_causal_happy = ["female_cas_hap_501.png",
+                                "female_cas_hap_481.PNG",
+                                "female_cas_hap_731.png",
+                                "female_cas_hap_224.png",
+                                "0157_fem_cas_hap.png",
+                                "female_cas_hap_724.PNG"]
+
+    const im_gr_business_happy = ["female_bus_hap_484.PNG",
+                                  "female_bus_hap_504.png",
+                                  "female_bus_hap_734.png",
+                                  "female_bus_hap_222.png",
+                                  "0157_fem_bis_hap.png",
+                                  "female_bus_hap_723.PNG"  ]
+
+    const im_gr_causal_neutral = ["female_cas_neut_482.PNG",
+                                  "female_cas_neut_502.png",
+                                  "female_cas_neut_732.png",
+                                  "female_cas_neut_223.png",
+                                  "0157_fem_cas_ntr.png",
+                                  "female_cas_neut_722.PNG"]
+
+    const im_gr_business_neutral = ["female_bus_neut_483.PNG",
+                                    "female_bus_neut_503.png",
+                                    "female_bus_neut_733.png",
+                                    "female_bus_neut_221.png",
+                                    "0157_fem_bis_ntr.png",
+                                    "female_bus_neut_721.PNG"]
+
+    const groups = [im_gr_causal_happy,im_gr_causal_happy,im_gr_causal_happy,
+                    im_gr_causal_neutral, im_gr_causal_neutral, im_gr_causal_neutral,
+                    im_gr_business_happy,  im_gr_business_happy,  im_gr_business_happy,
+                    im_gr_business_neutral,im_gr_business_neutral,im_gr_business_neutral] // order see groups in models.py!
+
+    function choose_image(){
+        var x = group_assignment
+        var group_images = groups[x-1] // because zero based index but groups start at 1
+        const ran = Math.floor(Math.random() * group_images.length)
+        const img_src = "/static/images/" + group_images[ran];
+        return img_src
+    }
+
+    // var ch_image = choose_image()
+
+    if (localStorage.getItem("Img") == null){ // check if image is already stored
+        console.log("no variable saved yet")
+        var ch_image = choose_image()
+        localStorage.setItem("Img", ch_image); // try to store the image variable, that after refresh same image is shown
+        show_image(ch_image)
+        document.getElementById("image").value = ch_image // store image as variable
+    }
+
+    else{
+        console.log("saved yes")
+        var ch_img = localStorage.getItem("Img");
+         show_image(ch_img)
+        document.getElementById("image").value = ch_img // store image as variable
+    }
+
+
+    </script>
+
+
+    <div id="audio_div"></div>
+    <script>
+
+    const audio_div = document.getElementById("audio_div")
+    function show_audio(src) {
+        var aud3 = document.createElement("audio");
+        aud3.src = src + ".wav";
+        aud3.id = "song";
+        aud3.type = "audio/wav";
+        aud3.controls = true;
+        aud3.load();
+        audio_div.appendChild(aud3)
+            .className = "media_player";
+    }
+
+    const audio_easy = ["/static/audio/simple speech"]
+    const audio_medium = ["/static/audio/original speech"]
+    const audio_hard = ["/static/audio/complex speech"]
+    const groups_audio = [audio_easy, audio_medium, audio_hard,
+                          audio_easy, audio_medium, audio_hard,
+                          audio_easy, audio_medium, audio_hard,
+                          audio_easy, audio_medium, audio_hard]  // see group orders in models.py
+
+    function choose_audio(){
+        var y = group_assignment
+        var group_audio = groups_audio[y-1] // because zero based index but groups start at 1
+        console.log(group_audio)
+        const ran2 = Math.floor(Math.random() * group_audio.length)
+        const audio_src =  group_audio[ran2];
+
+        return audio_src
+    }
+
+    var src_audio = choose_audio()
+    show_audio(src_audio)
+    document.getElementById("ch_audio_gr").value = src_audio // store which audio was played
+
+
+    </script>
+
+
+  <br>
+    <div class = "wrapper">
+   <button class="otree-btn-next btn btn-primary next-button otree-next-button"  id="btnCounter" disabled>Weiter <span id="count"></span>
+
+    </button>
+    </div>
+
+    <script>
+      var spn = document.getElementById("count");
+    var btn = document.getElementById("btnCounter");
+
+    var count = 30;     // Set count
+    var timer = null;  // For referencing the timer
+
+    (function countDown(){
+      // Display counter and start counting down
+       if(count !== 1) {
+           spn.textContent = "in: " + count + " Sekunden";
+       }
+       if (count == 1){
+           spn.textContent = "in: " + count + " Sekunde";
+       }
+
+      // Run the function again every second if the count is not zero
+      if(count !== 0){
+        timer = setTimeout(countDown, 1000);
+        count--; // decrease the timer
+      } else {
+        // Enable the button
+        btn.removeAttribute("disabled");
+        spn.textContent = ""
+      }
+    }());
+    </script>
+
+{% endblock %}

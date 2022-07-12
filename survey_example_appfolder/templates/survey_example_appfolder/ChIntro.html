@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<br>
+<h2> Bitte lesen Sie sich den Text aufmerksam durch </h2>
+    <hr>
+    <div class="mb-3 bg-light border pt-2 pb-2 px-2">
+    <br>
+    Nachfolgend sehen Sie ein Bild und erhalten eine Audioaufnahme. Bitte schalten Sie den Ton an Ihrem Gerät an oder halten Sie Kopfhörer bereit.
+    Um die Audiodatei anhören zu können, klicken Sie auf den "Play" Knopf unterhalb des Bildes. Hören Sie sich die Audioaufnahme sorgfältig an.
+    Dann erst kann der Weiter-Button angeklickt werden.
+    <br>
+    <br>
+    </div>
+<br>
+
+<script>
+localStorage.clear() // clear local storage such that correct image can be shown
+console.log("is cleared")
+</script>
+<button class="otree-btn-next btn btn-primary next-button otree-next-button">
+    Weiter
+</button>
+
+
+{% endblock %}
