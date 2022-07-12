@@ -1,0 +1,88 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+<hr>
+
+<br>
+
+<br>
+<p><b>Wie hoch ist das monatliche Netto-Einkommen Ihres Haushaltes insgesamt? Damit ist  die Summe,
+    die nach Abzug von Steuern und Sozialversicherungsbeiträgen übrig bleibt, gemeint.</b></p>
+<input type="radio" name="household_income" value="1" /> Unter 1000 Euro
+<br>
+<input type="radio" name="household_income" value="2" /> 1000 bis 1499 Euro
+<br>
+<input type="radio" name="household_income" value="3" /> 1500 bis 1999 Euro
+<br>
+<input type="radio" name="household_income" value="4" /> 2000 bis 2499 Euro
+<br>
+<input type="radio" name="household_income" value="5" /> 3000 und mehr
+<br>
+<input type="radio" name="household_income" value="-888" /> weiß nicht
+<br>
+<input type="radio" name="household_income" value="-999" /> Keine Angabe
+<br>
+
+<br>
+<p><b>Was ist ihr höchster allgemeinbildenden Schulabschluss haben Sie?</b></p>
+<input  type="radio" name="general_education"  value="1"/> Keinen Abschluss
+<br>
+<input  type="radio" name="general_education"  value="2"/> Hauptschulabschluss
+<br>
+<input  type="radio" name="general_education"  value="3"/> Realschulabschluss (Mittlere Reife)
+<br>
+<input  type="radio" name="general_education"  value="4"/> Fachhochschulreife
+<br>
+<input  type="radio" name="general_education"  value="5"/> Abitur
+<br>
+<input  type="radio" name="general_education"  value="6"/> Noch in der Schule
+<br>
+<input  type="radio" name="general_education"  value="-888"/> weiß nicht
+<br>
+
+<br>
+<p><b>Wie viele Einwohner zählt ihr Wohnort in etwa?</b></p>
+<input  type="radio" name="ba_location"  value="1"/> < 5.000 Einwohner
+<br>
+<input  type="radio" name="ba_location"  value="2"/> 5.000-30.000 Einwohner
+<br>
+<input  type="radio" name="ba_location"  value="3"/> 30.000-100.000 Einwohner
+<br>
+<input  type="radio" name="ba_location"  value="4"/> 100.000-500.000 Einwohner
+<br>
+<input  type="radio" name="ba_location"  value="5"/> > 500.000 Einwohner
+<br>
+<input  type="radio" name="ba_location"  value="-888"/> weiß nicht
+<br>
+
+<br>
+
+<p><b>In welchem Land sind Sie geboren?</b></p>
+<input  type="text" name="ba_immigration1"/>
+<br>
+
+<br>
+<p><b>In welchem Land ist Ihre Mutter geboren?</b></p>
+<input  type="text" name="ba_immigration2"/>
+<br>
+
+<br>
+<p><b>In welchem Land ist Ihr Vater geboren?</b></p>
+<input  type="text" name="ba_immigration3"/>
+<br>
+
+<br>
+
+<button class="otree-btn-next btn btn-primary next-button otree-next-button">
+    Weiter
+</button>
+
+{% endblock %}
+
+

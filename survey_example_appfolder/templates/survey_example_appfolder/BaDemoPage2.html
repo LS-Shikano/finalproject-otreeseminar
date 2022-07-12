@@ -1,0 +1,56 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+<hr>
+
+<br>
+<p><b>Haben Sie schon einmal an einer genehmigten Demonstration teilgenommen?</b></p>
+<input type="radio" name="demonstration_participation_allowed" value="1" /> Ja
+<br>
+<input type="radio" name="demonstration_participation_allowed" value="2" /> Nein
+<br>
+<input type="radio" name="demonstration_participation_allowed" value="-999" /> weiß nicht
+<br>
+
+<br>
+<p><b>Haben Sie schon einmal an einer nicht genehmigten Demonstration teilgenommen?</b></p>
+<input type="radio" name="demonstration_participation_notallowed" value="1" /> Ja
+<br>
+<input type="radio" name="demonstration_participation_notallowed" value="2" /> Nein
+<br>
+<input type="radio" name="demonstration_participation_notallowed" value="-999" /> weiß nicht
+<br>
+
+<br>
+<p><b>Haben Sie schon einmal an einer Online-Protestaktion oder Online-Demonstration teilgenommen?</b></p>
+<input type="radio" name="demonstration_participation_online" value="1" /> Ja
+<br>
+<input type="radio" name="demonstration_participation_online" value="2" /> Nein
+<br>
+<input type="radio" name="demonstration_participation_online" value="-999" /> weiß nicht
+<br>
+
+<br>
+<p><b>Haben Sie schon einmal auf Instagram, Facebook, Twitter oder in anderen sozialen Netzwerken
+    Ihre Meinung zu politischen Themen geäußert?</b></p>
+<input type="radio" name="social_media" value="1" /> Ja
+<br>
+<input type="radio" name="social_media" value="2" /> Nein
+<br>
+<input type="radio" name="social_media" value="-999" /> weiß nicht
+<br>
+
+<br>
+<br>
+
+<button class="otree-btn-next btn btn-primary next-button otree-next-button">
+    Weiter
+</button>
+
+{% endblock %}

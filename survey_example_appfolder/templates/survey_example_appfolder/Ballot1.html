@@ -1,0 +1,534 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+
+{% block title %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+
+    var ba_group_assignment = {{ ba_group_assignment }};
+
+    //depending on in which group a player is assigned, they will get a different ballot
+
+    var div_group0 = document.getElementById('group0');
+    var div_group1 = document.getElementById('group1');
+    var div_group2 = document.getElementById('group2');
+    var div_group3 = document.getElementById('group3');
+
+    if (ba_group_assignment == 0) {
+        div_group0.style.display = "block";
+    }
+    if (ba_group_assignment == 1) {
+        div_group1.style.display = "block";
+    }
+    if (ba_group_assignment == 2) {
+        div_group2.style.display = "block";
+    }
+    if (ba_group_assignment == 3) {
+        div_group3.style.display = "block";
+    }
+
+</script>
+
+{% endblock %}
+
+
+{%block style %}
+
+
+<style>
+.otree-title{
+    background: white;
+    text-align: center;
+    display:none;
+}
+
+    .extable th {  width:350px; background-color: lightgrey; padding: 6px; border: solid 1px ;}
+    .extable td { padding: 6px; border: solid 1px ; background-color: white }
+    .extable th.box {width: 10%}
+
+</style>
+
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+{{ formfield_errors 'ba_ballot1' }}
+
+<br>
+
+<h1>Ballot Test with Table</h1>
+
+<br>
+
+<!-- Ballot gender 0  -->
+
+<div id="group0" style="display: none">
+
+
+<p><b>Sie nehmen an einer Direktwahl zum/zur Bürgermeister/in einem deutschen Stadtstaat teil.
+    Im Folgenden sehen Sie den Wahlzettel:</b></p>
+
+<br>
+
+<table class ="extable">
+
+            <thead>
+                    <tr>
+                        <th class="box">  </th>
+                        <th>Stimmzettel für die Wahl der Oberbürgermeisterin/des Oberbürgermeisters der
+                            Stadt Musterstadt</th>
+                    </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 1. Michael Kramer </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 2. Niels Connemann </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 3. Sophia Stephan </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 4. Andreas Verlinden </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 5. Sonja Felser </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 6. Linda Hardt </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 7. Karsten Hofmann </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 8. Markus Koeppen </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 9. Lisa Weber </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 10. Manuela Kluckert </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 11. Dietmar Seitzl </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 12. Dagmar Stecker </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 13. Alexander von Willbrandt </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 14. Emma Schneider </td>
+                    </tr>
+            </tbody>
+ </table>
+
+<br>
+<p><b>Sie haben eine Stimme. Welche/n Kandidaten/in (parteilos!) würden Sie wählen?
+    Bitte setzen Sie entsprechend ihr Kreuz:</b></p>
+
+<input type="radio" name="ba_ballot1" value="1" /> 1. Michael Kramer
+<br>
+<input type="radio" name="ba_ballot1" value="2" /> 2. Niels Connemann
+<br>
+<input type="radio" name="ba_ballot1" value="3" /> 3. Sophia Stephan
+<br>
+<input type="radio" name="ba_ballot1" value="4" /> 4. Andreas Verlinden
+<br>
+<input type="radio" name="ba_ballot1" value="5" /> 5. Sonja Felser
+<br>
+<input type="radio" name="ba_ballot1" value="6" /> 6. Linda Hardt
+<br>
+<input type="radio" name="ba_ballot1" value="7" /> 7. Karsten Hofmann
+<br>
+<input type="radio" name="ba_ballot1" value="8" /> 8. Markus Koeppen
+<br>
+<input type="radio" name="ba_ballot1" value="9" /> 9. Lisa Weber
+<br>
+<input type="radio" name="ba_ballot1" value="10" /> 10. Manuela Kluckert
+<br>
+<input type="radio" name="ba_ballot1" value="11" /> 11. Dietmar Seitzl
+<br>
+<input type="radio" name="ba_ballot1" value="12" /> 12. Dagmar Stecker
+<br>
+<input type="radio" name="ba_ballot1" value="13" /> 13. Alexander von Wilbrandt
+<br>
+<input type="radio" name="ba_ballot1" value="14" /> 14. Emma Schneider
+
+<br>
+
+</div>
+
+
+<div id="group1" style="display: none">
+
+<!-- Ballot gender 1  -->
+
+<p><b>Sie nehmen an einer Direktwahl zum/zur Bürgermeister/in einem deutschen Stadtstaat teil.
+    Im Folgenden sehen Sie den Wahlzettel:</b></p>
+
+<br>
+
+<table class ="extable">
+
+            <thead>
+                    <tr>
+                        <th class="box">  </th>
+                        <th>Stimmzettel für die Wahl der Oberbürgermeisterin/des Oberbürgermeisters der
+                            Stadt Musterstadt</th>
+                    </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 1. Emma Schneider </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 2. Alexander von Willbrandt </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 3. Dagmar Stecker </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 4. Dietmar Seitzl </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 5. Manuela Kluckert </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 6. Lisa Weber </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 7. Markus Koeppen </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 8. Karsten Hofmann </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 9. Linda Hardt </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 10. Sonja Felser </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 11. Andreas Verlinden </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 12. Sophia Stephan </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 13. Niels Connemann </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 14. Michael Kramer </td>
+                    </tr>
+            </tbody>
+ </table>
+
+<br>
+<p><b>Sie haben eine Stimme. Welche/n Kandidaten/in (parteilos!) würden Sie wählen?
+    Bitte setzen Sie entsprechend ihr Kreuz:</b></p>
+
+<input type="radio" name="ba_ballot1" value="1" /> 1. Emma Schneider
+<br>
+<input type="radio" name="ba_ballot1" value="2" /> 2. Alexander von Wilbrandt
+<br>
+<input type="radio" name="ba_ballot1" value="3" /> 3. Dagmar Stecker
+<br>
+<input type="radio" name="ba_ballot1" value="4" /> 4. Dietmar Seitzl
+<br>
+<input type="radio" name="ba_ballot1" value="5" /> 5. Manuela Kluckert
+<br>
+<input type="radio" name="ba_ballot1" value="6" /> 6. Lisa Weber
+<br>
+<input type="radio" name="ba_ballot1" value="7" /> 7. Markus Koeppen
+<br>
+<input type="radio" name="ba_ballot1" value="8" /> 8. Karsten Hofmann
+<br>
+<input type="radio" name="ba_ballot1" value="9" /> 9. Linda Hardt
+<br>
+<input type="radio" name="ba_ballot1" value="10" /> 10. Sonja Felser
+<br>
+<input type="radio" name="ba_ballot1" value="11" /> 11. Andreas Verlinden
+<br>
+<input type="radio" name="ba_ballot1" value="12" /> 12. Sophia Stephan
+<br>
+<input type="radio" name="ba_ballot1" value="13" /> 13. Niels Connemann
+<br>
+<input type="radio" name="ba_ballot1" value="14" /> 14. Michael Kramer
+
+<br>
+
+</div>
+
+
+<div id="group2" style="display: none">
+
+<!-- Ballot migrationalback 2  -->
+
+<p><b>Sie nehmen an einer Direktwahl zum/zur Bürgermeister/in einem deutschen Stadtstaat teil.
+    Im Folgenden sehen Sie den Wahlzettel:</b></p>
+
+<br>
+
+<table class ="extable">
+
+            <thead>
+                    <tr>
+                        <th class="box">  </th>
+                        <th>Stimmzettel für die Wahl der Oberbürgermeisterin/des Oberbürgermeisters der
+                            Stadt Musterstadt</th>
+                    </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 1. Michael Kramer </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 2. Zeynep Aslan </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 3. Niels Connemann </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 4. Mustafa Ahmed </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 5. Andreas Verlinden </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 6. Sonja Felser </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 7. Zofia Wójcik </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 8. Dietmar Gerdes </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 9. Linda Hardt </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 10. Mohamed Özdemir </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 11. Jekaterina Ljudmilla </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 12. Arne Löffer </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 13. Shlomo Rosenkranz </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 14. Chaim Friedländer </td>
+                    </tr>
+            </tbody>
+ </table>
+
+<br>
+<p><b>Sie haben eine Stimme. Welche/n Kandidaten/in (parteilos!) würden Sie wählen?
+    Bitte setzen Sie entsprechend ihr Kreuz:</b></p>
+
+<input type="radio" name="ba_ballot1" value="1" /> 1. Michael Kramer
+<br>
+<input type="radio" name="ba_ballot1" value="2" /> 2. Zeynep Aslan
+<br>
+<input type="radio" name="ba_ballot1" value="3" /> 3. Niels Connemann
+<br>
+<input type="radio" name="ba_ballot1" value="4" /> 4. Mustafa Ahmed
+<br>
+<input type="radio" name="ba_ballot1" value="5" /> 5. Andreas Verlinden
+<br>
+<input type="radio" name="ba_ballot1" value="6" /> 6. Sonja Felser
+<br>
+<input type="radio" name="ba_ballot1" value="7" /> 7. Zofia Wójcik
+<br>
+<input type="radio" name="ba_ballot1" value="8" /> 8. Dietmar Gerdes
+<br>
+<input type="radio" name="ba_ballot1" value="9" /> 9. Linda Hardt
+<br>
+<input type="radio" name="ba_ballot1" value="10" /> 10. Mohamed Özdemir
+<br>
+<input type="radio" name="ba_ballot1" value="11" /> 11. Jekaterina Ljudmilla
+<br>
+<input type="radio" name="ba_ballot1" value="12" /> 12. Arne Löffer
+<br>
+<input type="radio" name="ba_ballot1" value="13" /> 13. Shlomo Rosenkranz
+<br>
+<input type="radio" name="ba_ballot1" value="14" /> 14. Chaim Friedländer
+
+<br>
+
+</div>
+
+<div id="group3" style="display: none">
+
+<!-- Ballot migrationalback 3  -->
+
+<p><b>Sie nehmen an einer Direktwahl zum/zur Bürgermeister/in einem deutschen Stadtstaat teil.
+    Im Folgenden sehen Sie den Wahlzettel:</b></p>
+
+<br>
+
+<table class ="extable">
+
+            <thead>
+                    <tr>
+                        <th class="box">  </th>
+                        <th>Stimmzettel für die Wahl der Oberbürgermeisterin/des Oberbürgermeisters der
+                            Stadt Musterstadt</th>
+                    </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 1. Chaim Friedländer </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 2. Shlomo Rosenkranz </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 3. Arne Löffer </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 4. Jekaterina Ljudmilla </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 5. Mohamed Özdemir </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 6. Linda Hardt </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 7. Dietmar Gerdes </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 8. Zofia Wójcik </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 9. Sonja Felser </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 10. Andreas Verlinden </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 11. Mustafa Ahmed </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 12. Niels Connemann </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 13. Zeynep Aslan </td>
+                    </tr>
+                    <tr>
+                        <td>&#9744;</td>
+                        <td> 14. Michael Kramer </td>
+                    </tr>
+            </tbody>
+ </table>
+
+<br>
+<p><b>Sie haben eine Stimme. Welche/n Kandidaten/in (parteilos!) würden Sie wählen?
+    Bitte setzen Sie entsprechend ihr Kreuz:</b></p>
+
+<input type="radio" name="ba_ballot1" value="1" /> 1. Chaim Friedländer
+<br>
+<input type="radio" name="ba_ballot1" value="2" /> 2. Shlomo Rosenkranz
+<br>
+<input type="radio" name="ba_ballot1" value="3" /> 3. Arne Löffer
+<br>
+<input type="radio" name="ba_ballot1" value="4" /> 4. Jekaterina Ljudmilla
+<br>
+<input type="radio" name="ba_ballot1" value="5" /> 5. Mohamed Özdemir
+<br>
+<input type="radio" name="ba_ballot1" value="6" /> 6. Linda Hardt
+<br>
+<input type="radio" name="ba_ballot1" value="7" /> 7. Dietmar Gerdes
+<br>
+<input type="radio" name="ba_ballot1" value="8" /> 8. Zofia Wójcik
+<br>
+<input type="radio" name="ba_ballot1" value="9" /> 9. Sonja Felser
+<br>
+<input type="radio" name="ba_ballot1" value="10" /> 10. Andreas Verlinden
+<br>
+<input type="radio" name="ba_ballot1" value="11" /> 11. Mustafa Ahmed
+<br>
+<input type="radio" name="ba_ballot1" value="12" /> 12. Niels Connemann
+<br>
+<input type="radio" name="ba_ballot1" value="13" /> 13. Zeynep Aslan
+<br>
+<input type="radio" name="ba_ballot1" value="14" /> 14. Michael Kramer
+
+<br>
+
+</div>
+
+<br>
+<hr>
+
+ <button class="otree-btn-next btn btn-primary next-button otree-next-button">
+    Weiter
+</button>
+{% endblock %}

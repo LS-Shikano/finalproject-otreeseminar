@@ -1,0 +1,593 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+
+{% block title %}
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+{% block content %}
+
+<hr>
+
+<p><b>Im Folgenden stellen wir Ihnen ein paar Fragen zu Ihren politischen Präferenzen:</b></p>
+
+<br>
+<div class="mb-3 bg-light border pt-2 pb-2 px-2 ">
+    <fieldset>
+        <div class="table">
+            <table class="table"> <p><b>Q1. In der Politik wird gelegentlich von "links" und "rechts" gesprochen.
+                Wo würden Sie sich auf dieser Skala einordnen, wobei 0 links und 11 rechts bedeutet?</b></p>
+                <tbody>
+                    <tr>
+                        <th style="width: 8%">Links <br>0</th>
+                        <th style="width: 8%"><br>1</th>
+                        <th style="width: 8%"><br>2</th>
+                        <th style="width: 8%"><br>3</th>
+                        <th style="width: 8%"><br>4</th>
+                        <th style="width: 8%"><br>5</th>
+                        <th style="width: 8%"><br>6</th>
+                        <th style="width: 8%"><br>7</th>
+                        <th style="width: 8%"><br>8</th>
+                        <th style="width: 8%"><br>9</th>
+                        <th style="width: 8%"><br>10</th>
+                        <th style="width: 8%">Rechts<br>11</th>
+                    </tr>
+                    <tr>
+                        <th><input type="radio" name="ba_positioning" value="0"></th>
+                        <th><input type="radio" name="ba_positioning" value="1"></th>
+                        <th><input type="radio" name="ba_positioning" value="2"></th>
+                        <th><input type="radio" name="ba_positioning" value="3"></th>
+                        <th><input type="radio" name="ba_positioning" value="4"></th>
+                        <th><input type="radio" name="ba_positioning" value="5"></th>
+                        <th><input type="radio" name="ba_positioning" value="6"></th>
+                        <th><input type="radio" name="ba_positioning" value="7"></th>
+                        <th><input type="radio" name="ba_positioning" value="8"></th>
+                        <th><input type="radio" name="ba_positioning" value="9"></th>
+                        <th><input type="radio" name="ba_positioning" value="10"></th>
+                        <th><input type="radio" name="ba_positioning" value="11"></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </fieldset>
+</div>
+
+
+<br>
+
+<br>
+<div class="mb-3 bg-light border pt-2 pb-2 px-2 ">
+    <fieldset>
+        <div class="table">
+            <table class="table"> <p><b>Q2. Wo würden Sie [Ihre Partei] auf dieser Skala einordnen,
+                wenn 0 für links und 11 für rechts?</b></p>
+                <tbody>
+                    <tr>
+                        <th style="width: 8%">Links<br>0</th>
+                        <th style="width: 8%"><br>1</th>
+                        <th style="width: 8%"><br>2</th>
+                        <th style="width: 8%"><br>3</th>
+                        <th style="width: 8%"><br>4</th>
+                        <th style="width: 8%"><br>5</th>
+                        <th style="width: 8%"><br>6</th>
+                        <th style="width: 8%"><br>7</th>
+                        <th style="width: 8%"><br>8</th>
+                        <th style="width: 8%"><br>9</th>
+                        <th style="width: 8%"><br>10</th>
+                        <th style="width: 8%">Rechts<br>11</th>
+                    </tr>
+                    <tr>
+                        <th><input type="radio" name="ba_party_pos" value="0"></th>
+                        <th><input type="radio" name="ba_party_pos" value="1"></th>
+                        <th><input type="radio" name="ba_party_pos" value="2"></th>
+                        <th><input type="radio" name="ba_party_pos" value="3"></th>
+                        <th><input type="radio" name="ba_party_pos" value="4"></th>
+                        <th><input type="radio" name="ba_party_pos" value="5"></th>
+                        <th><input type="radio" name="ba_party_pos" value="6"></th>
+                        <th><input type="radio" name="ba_party_pos" value="7"></th>
+                        <th><input type="radio" name="ba_party_pos" value="8"></th>
+                        <th><input type="radio" name="ba_party_pos" value="9"></th>
+                        <th><input type="radio" name="ba_party_pos" value="10"></th>
+                        <th><input type="radio" name="ba_party_pos" value="11"></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </fieldset>
+</div>
+
+
+<br>
+
+
+<br>
+<p><b>Im Folgenden stellen wir Ihnen ein paar Fragen zu Ihren politischen Präferenzen.
+    Menschen haben unterschiedliche Meinungen zu verschieden politischen Themen. Bitte geben Sie an,
+    inwieweit Sie den folgenden Aussagen zustimmen:
+</b></p>
+
+<br>
+
+<div class="mb-3 bg-light border pt-2 pb-2 px-2 ">
+    <fieldset>
+        <div class="table">
+            <table class="table"> <p><b>Q3.1. Der Staat sollte bei der Anerkennung des
+                offiziellen Flüchtlingsstatus strenger sein.</b></p>
+                <tbody>
+                    <tr>
+                        <th style="width: 12%">Stimme überhaupt nicht zu<br>0</th>
+                        <th style="width: 12%"><br><br><br>1</th>
+                        <th style="width: 12%"><br><br><br>2</th>
+                        <th style="width: 12%"><br><br><br>3</th>
+                        <th style="width: 12%"><br><br><br>4</th>
+                        <th style="width: 12%"><br><br><br>5</th>
+                        <th style="width: 12%"><br><br><br>6</th>
+                        <th style="width: 12%"><br>Stimme voll und ganz zu<br>7</th>
+                    </tr>
+                    <tr>
+                        <th><input type="radio" name="ba_opinion1" value="0"></th>
+                        <th><input type="radio" name="ba_opinion1" value="1"></th>
+                        <th><input type="radio" name="ba_opinion1" value="2"></th>
+                        <th><input type="radio" name="ba_opinion1" value="3"></th>
+                        <th><input type="radio" name="ba_opinion1" value="4"></th>
+                        <th><input type="radio" name="ba_opinion1" value="5"></th>
+                        <th><input type="radio" name="ba_opinion1" value="6"></th>
+                        <th><input type="radio" name="ba_opinion1" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q3.2. Die Regierung sollte Soziale Medien stärker regulieren in Bezug auf diskriminierende Inhalte.</b></p>
+                <tbody>
+                    <tr>
+                        <th style="width: 12%">Stimme überhaupt nicht zu<br>0</th>
+                        <th style="width: 12%"><br><br><br>1</th>
+                        <th style="width: 12%"><br><br><br>2</th>
+                        <th style="width: 12%"><br><br><br>3</th>
+                        <th style="width: 12%"><br><br><br>4</th>
+                        <th style="width: 12%"><br><br><br>5</th>
+                        <th style="width: 12%"><br><br><br>6</th>
+                        <th style="width: 12%"><br>Stimme voll und ganz zu<br>7</th>
+                    </tr>
+                    <tr>
+                        <th><input type="radio" name="ba_opinion2" value="0"></th>
+                        <th><input type="radio" name="ba_opinion2" value="1"></th>
+                        <th><input type="radio" name="ba_opinion2" value="2"></th>
+                        <th><input type="radio" name="ba_opinion2" value="3"></th>
+                        <th><input type="radio" name="ba_opinion2" value="4"></th>
+                        <th><input type="radio" name="ba_opinion2" value="5"></th>
+                        <th><input type="radio" name="ba_opinion2" value="6"></th>
+                        <th><input type="radio" name="ba_opinion2" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q3.3. Die Regierung sollte zu gleichen Teilen aus Männern und
+                Frauen bestehen.</b></p>
+                <tbody>
+                    <tr>
+                        <th style="width: 12%">Stimme überhaupt nicht zu<br>0</th>
+                        <th style="width: 12%"><br><br><br>1</th>
+                        <th style="width: 12%"><br><br><br>2</th>
+                        <th style="width: 12%"><br><br><br>3</th>
+                        <th style="width: 12%"><br><br><br>4</th>
+                        <th style="width: 12%"><br><br><br>5</th>
+                        <th style="width: 12%"><br><br><br>6</th>
+                        <th style="width: 12%"><br>Stimme voll und ganz zu<br>7</th>
+                    </tr>
+                    <tr>
+                        <th><input type="radio" name="ba_opinion3" value="0"></th>
+                        <th><input type="radio" name="ba_opinion3" value="1"></th>
+                        <th><input type="radio" name="ba_opinion3" value="2"></th>
+                        <th><input type="radio" name="ba_opinion3" value="3"></th>
+                        <th><input type="radio" name="ba_opinion3" value="4"></th>
+                        <th><input type="radio" name="ba_opinion3" value="5"></th>
+                        <th><input type="radio" name="ba_opinion3" value="6"></th>
+                        <th><input type="radio" name="ba_opinion3" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q3.4. Die Aufhebung des Verbotes der Werbung für
+                Schwangerschaftsabbrüche (Paragraph 219a) sollte rückgängig gemacht werden.</b></p>
+                <tbody>
+                    <tr>
+                        <th style="width: 12%">Stimme überhaupt nicht zu<br>0</th>
+                        <th style="width: 12%"><br><br><br>1</th>
+                        <th style="width: 12%"><br><br><br>2</th>
+                        <th style="width: 12%"><br><br><br>3</th>
+                        <th style="width: 12%"><br><br><br>4</th>
+                        <th style="width: 12%"><br><br><br>5</th>
+                        <th style="width: 12%"><br><br><br>6</th>
+                        <th style="width: 12%"><br>Stimme voll und ganz zu<br>7</th>
+                    </tr>
+                    <tr>
+                        <th><input type="radio" name="ba_opinion4" value="0"></th>
+                        <th><input type="radio" name="ba_opinion4" value="1"></th>
+                        <th><input type="radio" name="ba_opinion4" value="2"></th>
+                        <th><input type="radio" name="ba_opinion4" value="3"></th>
+                        <th><input type="radio" name="ba_opinion4" value="4"></th>
+                        <th><input type="radio" name="ba_opinion4" value="5"></th>
+                        <th><input type="radio" name="ba_opinion4" value="6"></th>
+                        <th><input type="radio" name="ba_opinion4" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q3.5. Die Regierung sollte den Reichtum durch hohe
+                Steuern für die Reichen umverteilen.</b></p>
+                <tbody>
+                    <tr>
+                        <th style="width: 12%">Stimme überhaupt nicht zu<br>0</th>
+                        <th style="width: 12%"><br><br><br>1</th>
+                        <th style="width: 12%"><br><br><br>2</th>
+                        <th style="width: 12%"><br><br><br>3</th>
+                        <th style="width: 12%"><br><br><br>4</th>
+                        <th style="width: 12%"><br><br><br>5</th>
+                        <th style="width: 12%"><br><br><br>6</th>
+                        <th style="width: 12%"><br>Stimme voll und ganz zu<br>7</th>
+                    </tr>
+                    <tr>
+                        <th><input type="radio" name="ba_opinion5" value="0"></th>
+                        <th><input type="radio" name="ba_opinion5" value="1"></th>
+                        <th><input type="radio" name="ba_opinion5" value="2"></th>
+                        <th><input type="radio" name="ba_opinion5" value="3"></th>
+                        <th><input type="radio" name="ba_opinion5" value="4"></th>
+                        <th><input type="radio" name="ba_opinion5" value="5"></th>
+                        <th><input type="radio" name="ba_opinion5" value="6"></th>
+                        <th><input type="radio" name="ba_opinion5" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </fieldset>
+</div>
+
+<br>
+
+<br>
+
+<p><b>Bitte geben Sie an, inwieweit die folgenden Eigenschaften
+                Ihrer Einschätzung nach auf <span style="color:red">FRAUEN</span></li> im Allgemeinen zutreffen:</b></p>
+
+<br>
+
+<div class="mb-3 bg-light border pt-2 pb-2 px-2 ">
+    <fieldset>
+        <div class="table">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th style="width: 12%">Stimme überhaupt nicht zu<br>0</th>
+                        <th style="width: 12%"><br><br><br>1</th>
+                        <th style="width: 12%"><br><br><br>2</th>
+                        <th style="width: 12%"><br><br><br>3</th>
+                        <th style="width: 12%"><br><br><br>4</th>
+                        <th style="width: 12%"><br><br><br>5</th>
+                        <th style="width: 12%"><br><br><br>6</th>
+                        <th style="width: 12%"><br>Stimme voll und ganz zu<br>7</th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q4.1. Selbstbewusst</b></p>
+                <tbody>
+                    <tr>
+                        <th><input type="radio" name="ba_women1" value="0"></th>
+                        <th><input type="radio" name="ba_women1" value="1"></th>
+                        <th><input type="radio" name="ba_women1" value="2"></th>
+                        <th><input type="radio" name="ba_women1" value="3"></th>
+                        <th><input type="radio" name="ba_women1" value="4"></th>
+                        <th><input type="radio" name="ba_women1" value="5"></th>
+                        <th><input type="radio" name="ba_women1" value="6"></th>
+                        <th><input type="radio" name="ba_women1" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q4.2. Gesellig</b></p>
+                <tbody>
+                    <tr>
+                        <th><input type="radio" name="ba_women2" value="0"></th>
+                        <th><input type="radio" name="ba_women2" value="1"></th>
+                        <th><input type="radio" name="ba_women2" value="2"></th>
+                        <th><input type="radio" name="ba_women2" value="3"></th>
+                        <th><input type="radio" name="ba_women2" value="4"></th>
+                        <th><input type="radio" name="ba_women2" value="5"></th>
+                        <th><input type="radio" name="ba_women2" value="6"></th>
+                        <th><input type="radio" name="ba_women2" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q4.3. Gesprächig</b></p>
+                <tbody>
+                    <tr>
+                        <th><input type="radio" name="ba_women3" value="0"></th>
+                        <th><input type="radio" name="ba_women3" value="1"></th>
+                        <th><input type="radio" name="ba_women3" value="2"></th>
+                        <th><input type="radio" name="ba_women3" value="3"></th>
+                        <th><input type="radio" name="ba_women3" value="4"></th>
+                        <th><input type="radio" name="ba_women3" value="5"></th>
+                        <th><input type="radio" name="ba_women3" value="6"></th>
+                        <th><input type="radio" name="ba_women3" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q4.4. Leistungsorientiert</b></p>
+                <tbody>
+                    <tr>
+                        <th><input type="radio" name="ba_women4" value="0"></th>
+                        <th><input type="radio" name="ba_women4" value="1"></th>
+                        <th><input type="radio" name="ba_women4" value="2"></th>
+                        <th><input type="radio" name="ba_women4" value="3"></th>
+                        <th><input type="radio" name="ba_women4" value="4"></th>
+                        <th><input type="radio" name="ba_women4" value="5"></th>
+                        <th><input type="radio" name="ba_women4" value="6"></th>
+                        <th><input type="radio" name="ba_women4" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q4.5. Durchsetzungsfähig</b></p>
+                <tbody>
+                    <tr>
+                        <th><input type="radio" name="ba_women5" value="0"></th>
+                        <th><input type="radio" name="ba_women5" value="1"></th>
+                        <th><input type="radio" name="ba_women5" value="2"></th>
+                        <th><input type="radio" name="ba_women5" value="3"></th>
+                        <th><input type="radio" name="ba_women5" value="4"></th>
+                        <th><input type="radio" name="ba_women5" value="5"></th>
+                        <th><input type="radio" name="ba_women5" value="6"></th>
+                        <th><input type="radio" name="ba_women5" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q4.6. Politisch</b></p>
+                <tbody>
+                    <tr>
+                        <th><input type="radio" name="ba_women6" value="0"></th>
+                        <th><input type="radio" name="ba_women6" value="1"></th>
+                        <th><input type="radio" name="ba_women6" value="2"></th>
+                        <th><input type="radio" name="ba_women6" value="3"></th>
+                        <th><input type="radio" name="ba_women6" value="4"></th>
+                        <th><input type="radio" name="ba_women6" value="5"></th>
+                        <th><input type="radio" name="ba_women6" value="6"></th>
+                        <th><input type="radio" name="ba_women6" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q4.7. Emotional</b></p>
+                <tbody>
+                    <tr>
+                        <th><input type="radio" name="ba_women7" value="0"></th>
+                        <th><input type="radio" name="ba_women7" value="1"></th>
+                        <th><input type="radio" name="ba_women7" value="2"></th>
+                        <th><input type="radio" name="ba_women7" value="3"></th>
+                        <th><input type="radio" name="ba_women7" value="4"></th>
+                        <th><input type="radio" name="ba_women7" value="5"></th>
+                        <th><input type="radio" name="ba_women7" value="6"></th>
+                        <th><input type="radio" name="ba_women7" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q4.8. Hilfsbereit</b></p>
+                <tbody>
+                    <tr>
+                    <tr>
+                        <th><input type="radio" name="ba_women8" value="0"></th>
+                        <th><input type="radio" name="ba_women8" value="1"></th>
+                        <th><input type="radio" name="ba_women8" value="2"></th>
+                        <th><input type="radio" name="ba_women8" value="3"></th>
+                        <th><input type="radio" name="ba_women8" value="4"></th>
+                        <th><input type="radio" name="ba_women8" value="5"></th>
+                        <th><input type="radio" name="ba_women8" value="6"></th>
+                        <th><input type="radio" name="ba_women8" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q4.9. Logisch</b></p>
+                <tbody>
+                    <tr>
+                        <th><input type="radio" name="ba_women9" value="0"></th>
+                        <th><input type="radio" name="ba_women9" value="1"></th>
+                        <th><input type="radio" name="ba_women9" value="2"></th>
+                        <th><input type="radio" name="ba_women9" value="3"></th>
+                        <th><input type="radio" name="ba_women9" value="4"></th>
+                        <th><input type="radio" name="ba_women9" value="5"></th>
+                        <th><input type="radio" name="ba_women9" value="6"></th>
+                        <th><input type="radio" name="ba_women9" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q4.10. Sympathisch</b></p>
+                <tbody>
+                    <tr>
+                        <th><input type="radio" name="ba_women10" value="0"></th>
+                        <th><input type="radio" name="ba_women10" value="1"></th>
+                        <th><input type="radio" name="ba_women10" value="2"></th>
+                        <th><input type="radio" name="ba_women10" value="3"></th>
+                        <th><input type="radio" name="ba_women10" value="4"></th>
+                        <th><input type="radio" name="ba_women10" value="5"></th>
+                        <th><input type="radio" name="ba_women10" value="6"></th>
+                        <th><input type="radio" name="ba_women10" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </fieldset>
+</div>
+
+<br>
+
+<br>
+<p><b>Bitte geben Sie an, inwieweit die folgenden Eigenschaften Ihrer Einschätzung nach auf
+    <span style="color:red">MÄNNER</span></li> im Allgemeinen zutreffen:</b></p>
+
+<br>
+
+<div class="mb-3 bg-light border pt-2 pb-2 px-2 ">
+    <fieldset>
+        <div class="table">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th style="width: 12%">Stimme überhaupt nicht zu<br>0</th>
+                        <th style="width: 12%"><br><br><br>1</th>
+                        <th style="width: 12%"><br><br><br>2</th>
+                        <th style="width: 12%"><br><br><br>3</th>
+                        <th style="width: 12%"><br><br><br>4</th>
+                        <th style="width: 12%"><br><br><br>5</th>
+                        <th style="width: 12%"><br><br><br>6</th>
+                        <th style="width: 12%"><br>Stimme voll und ganz zu<br>7</th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q5.1. Selbstbewusst</b></p>
+                <tbody>
+                    <tr>
+                        <th><input type="radio" name="ba_men1" value="0"></th>
+                        <th><input type="radio" name="ba_men1" value="1"></th>
+                        <th><input type="radio" name="ba_men1" value="2"></th>
+                        <th><input type="radio" name="ba_men1" value="3"></th>
+                        <th><input type="radio" name="ba_men1" value="4"></th>
+                        <th><input type="radio" name="ba_men1" value="5"></th>
+                        <th><input type="radio" name="ba_men1" value="6"></th>
+                        <th><input type="radio" name="ba_men1" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q5.2. Gesellig</b></p>
+                <tbody>
+                    <tr>
+                        <th><input type="radio" name="ba_men2" value="0"></th>
+                        <th><input type="radio" name="ba_men2" value="1"></th>
+                        <th><input type="radio" name="ba_men2" value="2"></th>
+                        <th><input type="radio" name="ba_men2" value="3"></th>
+                        <th><input type="radio" name="ba_men2" value="4"></th>
+                        <th><input type="radio" name="ba_men2" value="5"></th>
+                        <th><input type="radio" name="ba_men2" value="6"></th>
+                        <th><input type="radio" name="ba_men2" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q5.3. Gesprächig</b></p>
+                <tbody>
+                    <tr>
+                        <th><input type="radio" name="ba_men3" value="0"></th>
+                        <th><input type="radio" name="ba_men3" value="1"></th>
+                        <th><input type="radio" name="ba_men3" value="2"></th>
+                        <th><input type="radio" name="ba_men3" value="3"></th>
+                        <th><input type="radio" name="ba_men3" value="4"></th>
+                        <th><input type="radio" name="ba_men3" value="5"></th>
+                        <th><input type="radio" name="ba_men3" value="6"></th>
+                        <th><input type="radio" name="ba_men3" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q5.4. Leistungsorientiert</b></p>
+                <tbody>
+                    <tr>
+                        <th><input type="radio" name="ba_men4" value="0"></th>
+                        <th><input type="radio" name="ba_men4" value="1"></th>
+                        <th><input type="radio" name="ba_men4" value="2"></th>
+                        <th><input type="radio" name="ba_men4" value="3"></th>
+                        <th><input type="radio" name="ba_men4" value="4"></th>
+                        <th><input type="radio" name="ba_men4" value="5"></th>
+                        <th><input type="radio" name="ba_men4" value="6"></th>
+                        <th><input type="radio" name="ba_men4" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q5.5. Durchsetzungsfähig</b></p>
+                <tbody>
+                    <tr>
+                        <th><input type="radio" name="ba_men5" value="0"></th>
+                        <th><input type="radio" name="ba_men5" value="1"></th>
+                        <th><input type="radio" name="ba_men5" value="2"></th>
+                        <th><input type="radio" name="ba_men5" value="3"></th>
+                        <th><input type="radio" name="ba_men5" value="4"></th>
+                        <th><input type="radio" name="ba_men5" value="5"></th>
+                        <th><input type="radio" name="ba_men5" value="6"></th>
+                        <th><input type="radio" name="ba_men5" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q5.6. Politisch</b></p>
+                <tbody>
+                    <tr>
+                        <th><input type="radio" name="ba_men6" value="0"></th>
+                        <th><input type="radio" name="ba_men6" value="1"></th>
+                        <th><input type="radio" name="ba_men6" value="2"></th>
+                        <th><input type="radio" name="ba_men6" value="3"></th>
+                        <th><input type="radio" name="ba_men6" value="4"></th>
+                        <th><input type="radio" name="ba_men6" value="5"></th>
+                        <th><input type="radio" name="ba_men6" value="6"></th>
+                        <th><input type="radio" name="ba_men6" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q5.7. Emotional</b></p>
+                <tbody>
+                    <tr>
+                        <th><input type="radio" name="ba_men7" value="0"></th>
+                        <th><input type="radio" name="ba_men7" value="1"></th>
+                        <th><input type="radio" name="ba_men7" value="2"></th>
+                        <th><input type="radio" name="ba_men7" value="3"></th>
+                        <th><input type="radio" name="ba_men7" value="4"></th>
+                        <th><input type="radio" name="ba_men7" value="5"></th>
+                        <th><input type="radio" name="ba_men7" value="6"></th>
+                        <th><input type="radio" name="ba_men7" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q5.8. Hilfsbereit</b></p>
+                <tbody>
+                    <tr>
+                    <tr>
+                        <th><input type="radio" name="ba_men8" value="0"></th>
+                        <th><input type="radio" name="ba_men8" value="1"></th>
+                        <th><input type="radio" name="ba_men8" value="2"></th>
+                        <th><input type="radio" name="ba_men8" value="3"></th>
+                        <th><input type="radio" name="ba_men8" value="4"></th>
+                        <th><input type="radio" name="ba_men8" value="5"></th>
+                        <th><input type="radio" name="ba_men8" value="6"></th>
+                        <th><input type="radio" name="ba_men8" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q5.9. Logisch</b></p>
+                <tbody>
+                    <tr>
+                        <th><input type="radio" name="ba_men9" value="0"></th>
+                        <th><input type="radio" name="ba_men9" value="1"></th>
+                        <th><input type="radio" name="ba_men9" value="2"></th>
+                        <th><input type="radio" name="ba_men9" value="3"></th>
+                        <th><input type="radio" name="ba_men9" value="4"></th>
+                        <th><input type="radio" name="ba_men9" value="5"></th>
+                        <th><input type="radio" name="ba_men9" value="6"></th>
+                        <th><input type="radio" name="ba_men9" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table"> <p><b>Q5.10. Sympathisch</b></p>
+                <tbody>
+                    <tr>
+                        <th><input type="radio" name="ba_men10" value="0"></th>
+                        <th><input type="radio" name="ba_men10" value="1"></th>
+                        <th><input type="radio" name="ba_men10" value="2"></th>
+                        <th><input type="radio" name="ba_men10" value="3"></th>
+                        <th><input type="radio" name="ba_men10" value="4"></th>
+                        <th><input type="radio" name="ba_men10" value="5"></th>
+                        <th><input type="radio" name="ba_men10" value="6"></th>
+                        <th><input type="radio" name="ba_men10" value="7"></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </fieldset>
+</div>
+
+<br>
+
+
+<button class="otree-btn-next btn btn-primary next-button otree-next-button">
+    Weiter
+</button>
+
+{% endblock %}
