@@ -55,20 +55,6 @@ class BaWelcome(Page):
     def before_next_page(self):
         self.group.counter += 1
 
-class BaDemoPage(Page):
-    form_model = Player
-    form_fields = ['party_preference1', 'party_preference2', 'party_preference3', 'party_preference4',
-                   'party_preference5', 'party_preference6', 'eligibility', 'participation']
-
-class BaDemoPage2(Page):
-    form_model = Player
-    form_fields = ['demonstration_participation_allowed', 'demonstration_participation_notallowed',
-                   'demonstration_participation_online', 'social_media']
-
-class BaDemoPage3(Page):
-    form_model = Player
-    form_fields = ['household_income', 'general_education', 'ba_location', 'ba_immigration1',
-                   'ba_immigration2', 'ba_immigration3']
 
 # ballot as a table
 
@@ -110,7 +96,7 @@ class BaIdeology2(Page):
     form_fields = ['ba_positioning', 'ba_party_pos', 'ba_opinion1', 'ba_opinion2', 'ba_opinion3',
                    'ba_opinion4', 'ba_opinion5', 'ba_women1', 'ba_women2', 'ba_women3', 'ba_women4', 'ba_women5',
                    'ba_women6', 'ba_women7', 'ba_women8', 'ba_women9', 'ba_women10', 'ba_men1', 'ba_men2', 'ba_men3',
-                   'ba_women4', 'ba_women5', 'ba_men6', 'ba_men7', 'ba_men8', 'ba_men9', 'ba_men10']
+                   'ba_men4', 'ba_men5', 'ba_men6', 'ba_men7', 'ba_men8', 'ba_men9', 'ba_men10']
 
     def is_displayed(self):
         return self.player.ba_ideology_assignment == 1
@@ -167,6 +153,23 @@ class ChEndPage(Page):
     form_model = Player
     form_fields = ["ch_end_of_survey"]
 
+
+# control variables
+class CvDemoPage(Page):
+    form_model = Player
+    form_fields = ['party_preference1', 'party_preference2', 'party_preference3', 'party_preference4',
+                   'party_preference5', 'party_preference6', 'eligibility', 'participation']
+
+class CvDemoPage2(Page):
+    form_model = Player
+    form_fields = ['demonstration_participation_allowed', 'demonstration_participation_notallowed',
+                   'demonstration_participation_online', 'social_media']
+
+class CvDemoPage3(Page):
+    form_model = Player
+    form_fields = ['household_income', 'general_education', 'ba_location', 'ba_immigration1',
+                   'ba_immigration2', 'ba_immigration3']
+
     
 
 #General EndPage
@@ -198,9 +201,6 @@ page_sequence = [
 
                 #Ballot Pages
                 BaWelcome,
-                BaDemoPage,
-                BaDemoPage2,
-                BaDemoPage3,
                 BaIdeology1,
                 Ballot2,
                 BaIdeology2,
@@ -213,6 +213,11 @@ page_sequence = [
                 ChSurvey_Charisma,
                 ChSurvey_Charisma2,
                 ChEndPage,
+
+                # control variables
+                CvDemoPage,
+                CvDemoPage2,
+                CvDemoPage3,
 
                 #General EndPage
                 EndPage,
