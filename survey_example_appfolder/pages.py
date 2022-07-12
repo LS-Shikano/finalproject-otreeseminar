@@ -189,6 +189,13 @@ page_sequence = [
                 #general pages
                 Welcome,
                 QuotaPage,
+                
+                #Ballot Pages
+                BaWelcome,
+                BaIdeology1,
+                Ballot2,
+                BaIdeology2,
+                BaEndPage,
 
                 #Social MovementPages
                 SmWelcome,
@@ -198,13 +205,6 @@ page_sequence = [
                 SmDemonstrationPage,
                 SmEndPage,
 
-
-                #Ballot Pages
-                BaWelcome,
-                BaIdeology1,
-                Ballot2,
-                BaIdeology2,
-                BaEndPage,
 
                 # Charisma Pages
                 ChIntro,
