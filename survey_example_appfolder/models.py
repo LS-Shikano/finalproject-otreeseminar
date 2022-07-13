@@ -114,6 +114,7 @@ class Player(BasePlayer):
     sm_booked = models.IntegerField(initial=-999)
     sm_transportation = models.IntegerField(initial = -999)
     sm_reach = models.IntegerField(initial=-999)
+    sm_number = models.IntegerField(initial=-999)
     sm_crowd = models.IntegerField(initial=-999)
     sm_polarization = models.IntegerField(initial=-999)
     sm_riots = models.IntegerField(initial=-999)
@@ -171,13 +172,6 @@ class Player(BasePlayer):
     ba_men9 = models.IntegerField(initial=-999)
     ba_men10 = models.IntegerField(initial=-999)
 
-    # custom error message
-    # has to:
-    # 1) be in the class Player (important to indent the right way)
-    # 2) have a specific name "variablename"_error_message
-    def please_state_your_age_error_message(player, value):
-        if value < 18:
-            return 'Sie sind zu jung, um an dieser Umfrage teilzunehmen!'
 
     # Charisma (Ch) variables
     ch_group_assignment = models.IntegerField()

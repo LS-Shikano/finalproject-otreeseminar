@@ -29,7 +29,7 @@ class SmTreatmentPage(Page):
 
 class SmParticipationPage(Page):
     form_model = Player
-    form_fields=['sm_time_participationpage', 'sm_topic_relevance', 'sm_familiar_people', 'sm_booked', 'sm_transportation', 'sm_reach', 'sm_crowd', 
+    form_fields=['sm_time_participationpage', 'sm_topic_relevance', 'sm_familiar_people', 'sm_booked', 'sm_transportation', 'sm_reach', 'sm_number', 'sm_crowd', 
     'sm_polarization', 'sm_riots', 'sm_participation_else']
 
 class SmPoliticalPage(Page):
@@ -42,9 +42,6 @@ class SmDemonstrationPage(Page):
     form_fields=['sm_time_demonstrationpage', 'sm_demonstration_change', 'sm_demonstration_democracy', 'sm_demonstration_views',
     'sm_politicians', 'sm_influence', 'sm_interests']
 
-class SmEndPage(Page):
-    form_model = Player
-    form_fields=['sm_time_endpage']
 
 
 
@@ -83,7 +80,7 @@ class BaIdeology1(Page):
     form_fields = ['ba_positioning', 'ba_party_pos', 'ba_opinion1', 'ba_opinion2', 'ba_opinion3',
                    'ba_opinion4', 'ba_opinion5', 'ba_women1', 'ba_women2', 'ba_women3', 'ba_women4', 'ba_women5',
                    'ba_women6', 'ba_women7', 'ba_women8', 'ba_women9', 'ba_women10', 'ba_men1', 'ba_men2', 'ba_men3',
-                   'ba_women4', 'ba_women5', 'ba_men6', 'ba_men7', 'ba_men8', 'ba_men9', 'ba_men10']
+                   'ba_men4', 'ba_men5', 'ba_men6', 'ba_men7', 'ba_men8', 'ba_men9', 'ba_men10']
 
     def is_displayed(self):
         return self.player.ba_ideology_assignment == 0
@@ -100,9 +97,6 @@ class BaIdeology2(Page):
 
     def is_displayed(self):
         return self.player.ba_ideology_assignment == 1
-
-class BaEndPage(Page):
-    form_model = Player
 
 
 
@@ -194,16 +188,14 @@ page_sequence = [
                 BaWelcome,
                 BaIdeology1,
                 Ballot2,
-                BaIdeology2,
-                BaEndPage,
+                BaIdeology2
 
                 #Social MovementPages
                 SmWelcome,
                 SmTreatmentPage,
                 SmParticipationPage,
                 SmPoliticalPage,
-                SmDemonstrationPage,
-                SmEndPage,
+                SmDemonstrationPage,SmEndPage
 
 
                 # Charisma Pages

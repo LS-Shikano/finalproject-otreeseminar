@@ -2,8 +2,6 @@
 {% load otree static %}
 
 {% block title %}
-Studie zu sozialen Bewegungen: <br>
-Demonstrationen und Politiker
 {% endblock %}
 
 {% block styles %}
@@ -32,11 +30,11 @@ table { border-collapse: collapse; }
     <fieldset>
         <div class="table-responsive">
         <div class="table">
-            <table class="table w-auto"> Inwieweit stimmen Sie den Folgenden Aussagen zu oder nicht zu?
+            <table class="table w-auto"> Inwieweit stimmen Sie den Folgenden Aussagen zu oder nicht zu? (Pflichtfelder)
                 <tr>
                     <td style="width: 20%"></td>
                     <th style="width: 13%">
-                        <p class="mb-0"></p><br><br>trifft nicht zu</p>
+                        <p class="mb-0"></p><br><br>stimme nicht zu</p>
                     </th>
                     <th style="width: 13%">
                         <p class="mb-0"></p>
@@ -48,7 +46,7 @@ table { border-collapse: collapse; }
                         <p class="mb-0"></p>
                     </th>
                     <th style="width: 13%">
-                        <p class="mb-0"><br><br>trifft zu </p>
+                        <p class="mb-0"><br><br>stimme zu </p>
                     </th>
                     <th style="width: 13%">
                         <p class="mb-0">Weiß nicht/ <br> Keine Angabe</p>
@@ -66,7 +64,7 @@ table { border-collapse: collapse; }
                     </tr>
                     <!-- demonstration_change -->
                     <tr>
-                        <th>Durch Demonstrationen können keine politische Veränderungen bewirkt werden. 
+                        <th>Durch Demonstrationen können keine politischen Veränderungen bewirkt werden. 
                         </th>
                         <th><input class="persist" type="radio" name="sm_demonstration_change" value="1"></th>
                         <th><input class="persist" type="radio" name="sm_demonstration_change" value="2"></th>
@@ -117,7 +115,7 @@ table { border-collapse: collapse; }
                     </tr>
                     <!-- interests -->
                     <tr>
-                        <th>Die Politiker*innen bemühen sich im Allgemeinen darum die Interessen der Bevölkerung zu vetreten.</th>
+                        <th>Die Politiker*innen bemühen sich im Allgemeinen darum, die Interessen der Bevölkerung zu vetreten.</th>
                         <th><input class="persist" type="radio" name="sm_interests" value="1"></th>
                         <th><input class="persist" type="radio" name="sm_interests" value="2"></th>
                         <th><input class="persist" type="radio" name="sm_interests" value="3"></th>

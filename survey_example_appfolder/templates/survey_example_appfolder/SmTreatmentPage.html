@@ -3,8 +3,6 @@
 
 
 {% block title %}
-Studie zu sozialen Bewegungen: <br>
-Teilnahmewarscheinlichkeit
 {% endblock %}
 
 {% block styles %}
@@ -75,6 +73,13 @@ picture_three_mobile = document.getElementById("picture_three_mobile");
 {{ formfield_errors 'sm_participation' }}
 <input id="time" type="hidden" name="sm_time_treatmentpage" />
 <br>
+<div class="mb-3 bg-light border pt-2 pb-2 px-2">
+    Nehmen Sie sich bitte Zeit dieses Facebook-Event anzuschauen und zoomen Sie auch gerne bei Bedarf heran. Bei diesem Event geht es um eine Demonstration für Demokratie.
+    <br>
+    <br>
+    Im Folgenden werden Ihnen dazu Fragen gestellt und es wird <b>keine</b> Möglichkeit geben zurückzugehen. 
+    <br> 
+</div>
 <div class="imgbox">
     <!-- DESKTOP version of the pictures -->
     <img id="picture_one_desktop" class="center-fit" src="{% static 'images/one_desktop.png' %}" alt="Picture can not load" hidden>
@@ -87,19 +92,13 @@ picture_three_mobile = document.getElementById("picture_three_mobile");
 </div>
 <br>
 
-<div class="mb-3 bg-light border pt-2 pb-2 px-2">
-    Nehmen Sie sich bitte Zeit dieses Facebook-Event anzuschauen und zoomen Sie auch gerne bei Bedarf heran. Bei diesem Event geht um eine Demonstration für Demokratie.
-    <br>
-    <br>
-    Auf den folgenden Seiten werden Ihnen dazu Fragen gestellt und es wird <b>keine</b> Möglichkeit geben zurückzugehen. 
-    <br> 
-</div>
+
 <!-- table regarding if they would participate in the demonstration -->
 <div class="mb-3 bg-light border pt-2 pb-2 px-2 ">
     <fieldset>
         <div class="table-responsive">
         <div class="table">
-            <table class="table w-auto"> Mit welcher Wahrscheinlichkeit würden Sie an dieser Demonstration teilnehmen?
+            <table class="table w-auto"> Mit welcher Wahrscheinlichkeit würden Sie an dieser Demonstration teilnehmen? (Pflichtfeld)
                 <tr>
                     <th style="width: 16.67%">
                         <p class="mb-0"></p>Sehr <br> geringer </p>

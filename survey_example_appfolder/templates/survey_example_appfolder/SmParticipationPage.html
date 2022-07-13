@@ -2,8 +2,6 @@
 {% load otree static %}
 
 {% block title %}
-Studie zu sozialen Bewegungen: <br>
-Was beeinflusst Ihre Teilnahme
 {% endblock %}
 
 {% block styles %}
@@ -32,7 +30,7 @@ table { border-collapse: collapse; }
     <fieldset>
         <div class="table-responsive">
         <div class="table">
-            <table class="table w-auto"> Was beeinflusst die Wahrscheinlichkeit Ihrer Teilnahme?
+            <table class="table w-auto"> Was beeinflusst die Wahrscheinlichkeit Ihrer Teilnahme an der gezeigten Demonstration? (Pflichtfelder)
                 <tr>
                     <td></td>
                     <th style="width: 20%">
@@ -95,7 +93,7 @@ table { border-collapse: collapse; }
                     </tr>
                     <!-- transportation -->
                     <tr>
-                        <th>Die Bereitstellung von Transportmitteln zum Veranstaltungsort</th>
+                        <th>Die Verfügbarkeit von Transportmitteln zum Veranstaltungsort</th>
                         <th><input class="persist" type="radio" name="sm_transportation" value="1"></th>
                         <th><input class="persist" type="radio" name="sm_transportation" value="2"></th>
                         <th><input class="persist" type="radio" name="sm_transportation" value="3"></th>
@@ -105,13 +103,24 @@ table { border-collapse: collapse; }
                     </tr>
                     <!-- reach -->
                     <tr>
-                        <th>Die Reichweite der Demonstration/Anzahl an Demonstranten</th>
+                        <th>Die Reichweite der Demonstration</th>
                         <th><input class="persist" type="radio" name="sm_reach" value="1"></th>
                         <th><input class="persist" type="radio" name="sm_reach" value="2"></th>
                         <th><input class="persist" type="radio" name="sm_reach" value="3"></th>
                         <th><input class="persist" type="radio" name="sm_reach" value="4"></th>
                         <th class="line"><input class="persist" type="radio" name="sm_reach" value="5"></th>
                         <th><input class="persist" type="radio" name="sm_reach" value="-888"></th>
+                    </tr>
+                    <!-- number -->
+
+                    <tr>
+                        <th>Die Anzahl an Demonstrierenden</th>
+                        <th><input class="persist" type="radio" name="sm_number" value="1"></th>
+                        <th><input class="persist" type="radio" name="sm_number" value="2"></th>
+                        <th><input class="persist" type="radio" name="sm_number" value="3"></th>
+                        <th><input class="persist" type="radio" name="sm_number" value="4"></th>
+                        <th class="line"><input class="persist" type="radio" name="sm_number" value="5"></th>
+                        <th><input class="persist" type="radio" name="sm_number" value="-888"></th>
                     </tr>
                     <!-- crowd -->
                     <tr>
