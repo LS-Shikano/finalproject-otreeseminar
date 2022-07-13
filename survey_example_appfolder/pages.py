@@ -188,14 +188,14 @@ page_sequence = [
                 BaWelcome,
                 BaIdeology1,
                 Ballot2,
-                BaIdeology2
+                BaIdeology2,
 
                 #Social MovementPages
                 SmWelcome,
                 SmTreatmentPage,
                 SmParticipationPage,
                 SmPoliticalPage,
-                SmDemonstrationPage,SmEndPage
+                SmDemonstrationPage,
 
 
                 # Charisma Pages
