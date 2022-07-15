@@ -213,12 +213,13 @@ class Player(BasePlayer):
 
 
     # control variables
-    party_preference1 = models.IntegerField(initial=-999)
-    party_preference2 = models.IntegerField(initial=-999)
-    party_preference3 = models.IntegerField(initial=-999)
-    party_preference4 = models.IntegerField(initial=-999)
-    party_preference5 = models.IntegerField(initial=-999)
-    party_preference6 = models.IntegerField(initial=-999)
+    therm_spd = models.IntegerField(initial=-999)
+    therm_cdu = models.IntegerField(initial=-999)
+    therm_csu = models.IntegerField(initial=-999)
+    therm_gruene = models.IntegerField(initial=-999)
+    therm_fdp = models.IntegerField(initial=-999)
+    therm_afd = models.IntegerField(initial=-999)
+    therm_linke = models.IntegerField(initial=-999)
     household_income = models.IntegerField(initial=-999)
     general_education = models.IntegerField(initial=-999)
     ba_location = models.IntegerField(initial=-999)

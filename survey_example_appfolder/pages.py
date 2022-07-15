@@ -151,8 +151,8 @@ class ChEndPage(Page):
 # control variables
 class CvDemoPage(Page):
     form_model = Player
-    form_fields = ['party_preference1', 'party_preference2', 'party_preference3', 'party_preference4',
-                   'party_preference5', 'party_preference6', 'eligibility', 'participation']
+    form_fields = ['therm_spd', 'therm_cdu', 'therm_csu', 'therm_gruene',
+                   'therm_fdp', 'therm_afd', 'therm_linke', 'eligibility', 'participation']
 
 class CvDemoPage2(Page):
     form_model = Player
