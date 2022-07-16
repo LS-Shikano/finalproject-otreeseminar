@@ -140,6 +140,7 @@ class Player(BasePlayer):
 
 
     # Ballot variables
+    ba_party = models.IntegerField()
     ba_group_assignment = models.IntegerField()
     ba_ideology_assignment = models.IntegerField()
     ba_ballot1 = models.IntegerField(initial=-999)

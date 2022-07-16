@@ -77,7 +77,7 @@ class Ballot2(Page):
 
 class BaIdeology1(Page):
     form_model = Player
-    form_fields = ['ba_positioning', 'ba_party_pos', 'ba_opinion1', 'ba_opinion2', 'ba_opinion3',
+    form_fields = ['ba_positioning', 'ba_party', 'ba_party_pos', 'ba_opinion1', 'ba_opinion2', 'ba_opinion3',
                    'ba_opinion4', 'ba_opinion5', 'ba_women1', 'ba_women2', 'ba_women3', 'ba_women4', 'ba_women5',
                    'ba_women6', 'ba_women7', 'ba_women8', 'ba_women9', 'ba_women10', 'ba_men1', 'ba_men2', 'ba_men3',
                    'ba_men4', 'ba_men5', 'ba_men6', 'ba_men7', 'ba_men8', 'ba_men9', 'ba_men10']
@@ -90,7 +90,7 @@ class BaIdeology1(Page):
 
 class BaIdeology2(Page):
     form_model = Player
-    form_fields = ['ba_positioning', 'ba_party_pos', 'ba_opinion1', 'ba_opinion2', 'ba_opinion3',
+    form_fields = ['ba_positioning', 'ba_party', 'ba_party_pos', 'ba_opinion1', 'ba_opinion2', 'ba_opinion3',
                    'ba_opinion4', 'ba_opinion5', 'ba_women1', 'ba_women2', 'ba_women3', 'ba_women4', 'ba_women5',
                    'ba_women6', 'ba_women7', 'ba_women8', 'ba_women9', 'ba_women10', 'ba_men1', 'ba_men2', 'ba_men3',
                    'ba_men4', 'ba_men5', 'ba_men6', 'ba_men7', 'ba_men8', 'ba_men9', 'ba_men10']

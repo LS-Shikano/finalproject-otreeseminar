@@ -14,13 +14,14 @@
 <hr>
 
 <p><b>Im Folgenden stellen wir Ihnen ein paar Fragen zu Ihren politischen Präferenzen:</b></p>
+<p style="text-align:right;"><b>*Pflichtfelder</b></p>
 
 <br>
 <div class="mb-3 bg-light border pt-2 pb-2 px-2 ">
     <fieldset>
         <div class="table">
             <table class="table"> <p><b>In der Politik wird gelegentlich von "links" und "rechts" gesprochen.
-                Wo würden Sie sich auf dieser Skala einordnen, wobei 0 links und 11 rechts bedeutet?</b></p>
+                Wo würden Sie sich auf dieser Skala einordnen, wobei 0 links und 11 rechts bedeutet?*</b></p>
                 <tbody>
                     <tr>
                         <th style="width: 8%">Links <br>0</th>
@@ -60,11 +61,31 @@
 <br>
 
 <br>
+<p><b>Wenn Sonntag Bundestagswahl wäre, welche Partei würden sie wählen?*</b></p>
+<input type="radio" name="ba_party" value="1" /> SPD
+<br>
+<input type="radio" name="ba_party" value="2" /> CDU
+<br>
+<input type="radio" name="ba_party" value="3" /> Gruene
+<br>
+<input type="radio" name="ba_party" value="4" /> FDP
+<br>
+<input type="radio" name="ba_party" value="5" /> AfD
+<br>
+<input type="radio" name="ba_party" value="6" /> Linke
+<br>
+<input type="radio" name="ba_party" value="7" /> Sonstige
+<br>
+<input type="radio" name="ba_party" value="-999" /> Würde nicht wählen
+<br>
+{{ formfield_errors 'ba_party' }}
+<br>
+<br>
 <div class="mb-3 bg-light border pt-2 pb-2 px-2 ">
     <fieldset>
         <div class="table">
-            <table class="table"> <p><b>Wo würden Sie [Ihre Partei] auf dieser Skala einordnen,
-                wenn 0 für links und 11 für rechts steht?</b></p>
+            <table class="table"> <p><b>Wo würden Sie die Partei die Sie wählen würden auf dieser Skala einordnen,
+                wenn 0 für links und 11 für rechts?*</b></p>
                 <tbody>
                     <tr>
                         <th style="width: 8%">Links<br>0</th>
@@ -79,6 +100,7 @@
                         <th style="width: 8%"><br>9</th>
                         <th style="width: 8%"><br>10</th>
                         <th style="width: 8%">Rechts<br>11</th>
+                        <th style="width: 8%">Würde nicht wählen<br>0</th>
                     </tr>
                     <tr>
                         <th><input class="persist" type="radio" name="ba_party_pos" value="0"></th>
@@ -93,6 +115,7 @@
                         <th><input class="persist" type="radio" name="ba_party_pos" value="9"></th>
                         <th><input class="persist" type="radio" name="ba_party_pos" value="10"></th>
                         <th><input class="persist" type="radio" name="ba_party_pos" value="11"></th>
+                        <th><input class="persist" type="radio" name="ba_party_pos" value="-999"></th>
                     </tr>
                 </tbody>
             </table>
@@ -116,7 +139,7 @@
     <fieldset>
         <div class="table">
             <table class="table"> <p><b>Der Staat sollte bei der Anerkennung des
-                offiziellen Flüchtlingsstatus strenger sein.</b></p>
+                offiziellen Flüchtlingsstatuses strenger sein.*</b></p>
                 <tbody>
                     <tr>
                         <th style="width: 12%">Stimme überhaupt nicht zu<br>0</th>
@@ -140,7 +163,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Die Regierung sollte Soziale Medien stärker regulieren in Bezug auf diskriminierende Inhalte.</b></p>
+            <table class="table"> <p><b>Die Regierung sollte Soziale Medien stärker regulieren in Bezug auf diskriminierende Inhalte.*</b></p>
                 <tbody>
                     <tr>
                         <th style="width: 12%">Stimme überhaupt nicht zu<br>0</th>
@@ -165,7 +188,7 @@
                 </tbody>
             </table>
             <table class="table"> <p><b>Die Regierung sollte zu gleichen Teilen aus Männern und
-                Frauen bestehen.</b></p>
+                Frauen bestehen.*</b></p>
                 <tbody>
                     <tr>
                         <th style="width: 12%">Stimme überhaupt nicht zu<br>0</th>
@@ -189,8 +212,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Die Aufhebung des Verbotes der Werbung für
-                Schwangerschaftsabbrüche (Paragraph 219a) sollte rückgängig gemacht werden.</b></p>
+            <table class="table"> <p><b>Werbung für Schwangerschaftsabbrüche sollte verboten bleiben.*</b></p>
                 <tbody>
                     <tr>
                         <th style="width: 12%">Stimme überhaupt nicht zu<br>0</th>
@@ -214,8 +236,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Die Regierung sollte den Reichtum durch hohe
-                Steuern für die Reichen umverteilen.</b></p>
+            <table class="table"> <p><b>Die Regierung sollte Vermögen stärker besteuern und umverteilen.*</b></p>
                 <tbody>
                     <tr>
                         <th style="width: 12%">Stimme überhaupt nicht zu<br>0</th>
@@ -247,8 +268,7 @@
 
 <br>
 
-<p><b>Bitte geben Sie an, inwieweit die folgenden Eigenschaften
-                auf <span style="color:red">FRAUEN</span></li> im Allgemeinen zutreffen:</b></p>
+<p><b><span style="color:red">FRAUEN</span></li> sind:*</b></p>
 
 <br>
 
@@ -269,7 +289,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Selbstbewusst</b></p>
+            <table class="table"> <p><b>*Selbstbewusst</b></p>
                 <tbody>
                     <tr>
                         <th><input class="persist" type="radio" name="ba_women1" value="0"></th>
@@ -283,7 +303,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Gesellig</b></p>
+            <table class="table"> <p><b>*Gesellig</b></p>
                 <tbody>
                     <tr>
                         <th><input class="persist" type="radio" name="ba_women2" value="0"></th>
@@ -297,7 +317,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Gesprächig</b></p>
+            <table class="table"> <p><b>*Gesprächig</b></p>
                 <tbody>
                     <tr>
                         <th><input class="persist" type="radio" name="ba_women3" value="0"></th>
@@ -311,7 +331,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Leistungsorientiert</b></p>
+            <table class="table"> <p><b>*Leistungsorientiert</b></p>
                 <tbody>
                     <tr>
                         <th><input class="persist" type="radio" name="ba_women4" value="0"></th>
@@ -325,7 +345,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Durchsetzungsfähig</b></p>
+            <table class="table"> <p><b>*Durchsetzungsfähig</b></p>
                 <tbody>
                     <tr>
                         <th><input class="persist" type="radio" name="ba_women5" value="0"></th>
@@ -339,7 +359,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Politisch</b></p>
+            <table class="table"> <p><b>*Politisch</b></p>
                 <tbody>
                     <tr>
                         <th><input class="persist" type="radio" name="ba_women6" value="0"></th>
@@ -353,7 +373,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Emotional</b></p>
+            <table class="table"> <p><b>*Emotional</b></p>
                 <tbody>
                     <tr>
                         <th><input class="persist" type="radio" name="ba_women7" value="0"></th>
@@ -367,7 +387,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Hilfsbereit</b></p>
+            <table class="table"> <p><b>*Hilfsbereit</b></p>
                 <tbody>
                     <tr>
                     <tr>
@@ -382,7 +402,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Logisch</b></p>
+            <table class="table"> <p><b>*Logisch</b></p>
                 <tbody>
                     <tr>
                         <th><input class="persist" type="radio" name="ba_women9" value="0"></th>
@@ -396,7 +416,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Sympathisch</b></p>
+            <table class="table"> <p><b>*Sympathisch</b></p>
                 <tbody>
                     <tr>
                         <th><input class="persist" type="radio" name="ba_women10" value="0"></th>
@@ -417,8 +437,7 @@
 <br>
 
 <br>
-<p><b>Bitte geben Sie an, inwieweit die folgenden Eigenschaften auf
-    <span style="color:red">MÄNNER</span></li> im Allgemeinen zutreffen:</b></p>
+<p><b><span style="color:red">MÄNNER</span></li> sind:*</b></p>
 
 <br>
 
@@ -439,7 +458,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Selbstbewusst</b></p>
+            <table class="table"> <p><b>*Selbstbewusst</b></p>
                 <tbody>
                     <tr>
                         <th><input class="persist" type="radio" name="ba_men1" value="0"></th>
@@ -453,7 +472,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Gesellig</b></p>
+            <table class="table"> <p><b>*Gesellig</b></p>
                 <tbody>
                     <tr>
                         <th><input class="persist" type="radio" name="ba_men2" value="0"></th>
@@ -467,7 +486,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Gesprächig</b></p>
+            <table class="table"> <p><b>*Gesprächig</b></p>
                 <tbody>
                     <tr>
                         <th><input class="persist" type="radio" name="ba_men3" value="0"></th>
@@ -481,7 +500,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Leistungsorientiert</b></p>
+            <table class="table"> <p><b>*Leistungsorientiert</b></p>
                 <tbody>
                     <tr>
                         <th><input class="persist" type="radio" name="ba_men4" value="0"></th>
@@ -495,7 +514,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Durchsetzungsfähig</b></p>
+            <table class="table"> <p><b>*Durchsetzungsfähig</b></p>
                 <tbody>
                     <tr>
                         <th><input class="persist" type="radio" name="ba_men5" value="0"></th>
@@ -509,7 +528,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Politisch</b></p>
+            <table class="table"> <p><b>*Politisch</b></p>
                 <tbody>
                     <tr>
                         <th><input class="persist" type="radio" name="ba_men6" value="0"></th>
@@ -523,7 +542,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Emotional</b></p>
+            <table class="table"> <p><b>*Emotional</b></p>
                 <tbody>
                     <tr>
                         <th><input class="persist" type="radio" name="ba_men7" value="0"></th>
@@ -537,7 +556,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Hilfsbereit</b></p>
+            <table class="table"> <p><b>*Hilfsbereit</b></p>
                 <tbody>
                     <tr>
                     <tr>
@@ -552,7 +571,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Logisch</b></p>
+            <table class="table"> <p><b>*Logisch</b></p>
                 <tbody>
                     <tr>
                         <th><input class="persist" type="radio" name="ba_men9" value="0"></th>
@@ -566,7 +585,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table"> <p><b>Sympathisch</b></p>
+            <table class="table"> <p><b>*Sympathisch</b></p>
                 <tbody>
                     <tr>
                         <th><input class="persist" type="radio" name="ba_men10" value="0"></th>
