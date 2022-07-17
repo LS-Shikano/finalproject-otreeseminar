@@ -135,8 +135,6 @@ class Player(BasePlayer):
     sm_politicians = models.IntegerField(initial=-999)
     sm_influence = models.IntegerField(initial=-999)
     sm_interests = models.IntegerField(initial=-999)
-    #EndPage
-    sm_time_endpage = models.StringField(initial=-999)
 
 
     # Ballot variables
