@@ -20,17 +20,17 @@
     return a;
 }
 
-     const lst = ["eine ausdrucksstarke Person (ausdrucksstark und aussagekräftig in der verbalen Kommunikation)",
+     const lst = ["eine ausdrucksstarke Person",
         "eine Person mit außergewöhnlichen rednerischen Fähigkeiten",
         "eine Person, die großen Einfluss auf andere Menschen hat",
         "eine Person, die inspiriert",
-        "eine zuverlässige und glaubwürdige Person (man kann sich immer auf sie verlassen)",
+        "eine zuverlässige und glaubwürdige Person",
         "eine ehrliche Person",
         "eine attraktive Person",
         "eine charmante Person",
         "eine Person mit positiver Energie",
         "eine Person mit einer Vision",
-        "eine dominante Person (dominiert gerne und hat immer \"das Sagen\")",
+        "eine dominante Person",
         "eine Person, die Macht ausstrahlt"
      ]
 
@@ -50,10 +50,7 @@
 {% block content %}
 <input id="time_popout" type="hidden" name="ch_time_check_rede" />
 <br>
-<h2> Bitte beantworten Sie die folgende Frage </h2>
-<hr>
-<br>
-
+<p style="text-align:right;"><b>*Pflichtfeld</b></p>
 <script>
 function popout_other_reasons() {
         //for the openfield to indicate with how many friends you went to the demonstration
@@ -76,9 +73,9 @@ function popout_other_reasons() {
 </script>
 
 <div class="mb-3 bg-light border pt-2 pb-2 px-2">
-    <p><b>Um welches Thema ging es in der vorherigen Rede?</b></p>
-    <div><input id="check_klima" type="radio" name="ch_check_question" value="1" onclick="popout_other_reasons()" /> Die Auswirkung des Klimawandels</div>
-    <div><input id="check_digital" type="radio" name="ch_check_question" value="2" onclick="popout_other_reasons()"/> die Veränderung des Arbeitslebens durch Digitalisierung</div>
+    <p><b>Um welches Thema ging es in der vorherigen Rede? *</b></p>
+    <div><input id="check_klima" type="radio" name="ch_check_question" value="1" onclick="popout_other_reasons()" /> Die Auswirkung des Klimawandels </div>
+    <div><input id="check_digital" type="radio" name="ch_check_question" value="2" onclick="popout_other_reasons()"/> Die Veränderung des Arbeitslebens durch Digitalisierung</div>
     <div><input id="check_Kinder" type="radio" name="ch_check_question" value="3" onclick="popout_other_reasons()" /> Kinderbetreuung im Vorschulalter</div>
     <div><input id="check_problem" type="radio" name="ch_check_question" value="4" onclick="popout_other_reasons()" /> Ich hatte technische Probleme und konnte die Rede deswegen nicht anhören</div>
     <div><input id="check_other_reason" type="radio" name="ch_check_question" value="5" onclick="popout_other_reasons()" /> Ich habe die Rede aus einem anderen Grund nicht angehört</div>
@@ -94,7 +91,7 @@ function popout_other_reasons() {
 
 
 
-
+<br>
 <button class="otree-btn-next btn btn-primary next-button otree-next-button">
     Weiter
 </button>

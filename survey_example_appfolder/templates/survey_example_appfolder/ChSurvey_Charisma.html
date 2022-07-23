@@ -9,17 +9,17 @@
 
 {% block content %}
 
-<script src="{% static 'persist-raw.js' %}"></script> <!-- radio buttons save the input -->
 <input id="time_popout" type="hidden" name="ch_time_survey_charisma" />
     <!--measures when entering the page, maybe a way to check whether they actually listened to the speech-->
+
+<div id="script_div" class="mb-3 bg-light border pt-2 pb-2 px-2 " >
+<p>Bitte geben Sie an wie sehr Sie folgenden Aussagen zustimmen</p>
 <br>
-<h2> Bitte geben Sie an wie sehr Sie folgenden Aussagen zustimmen </h2>
-<hr>
-<div id="script_div"></div>
+
+</div>
+
 <script type = "text/javascript" src="{% static 'audio/table_function.js' %}"></script>
 <script>tableCreate(0,5)</script>
-<br>
-<br>
 
 <button class="otree-btn-next btn btn-primary next-button otree-next-button">
     Weiter
