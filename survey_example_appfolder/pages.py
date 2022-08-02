@@ -3,7 +3,9 @@ from ._builtin import Page, WaitPage
 from .models import Constants, Player
 from  survey_example_appfolder.HelperFunctions import filtering, counting
 
+########
 #General Welcome and Quota Page
+########
 class Welcome(Page):
     form_model = Player
     form_fields = ['time_welcome', 'device_type', 'operating_system', 'screen_width', 'screen_height']
@@ -14,8 +16,65 @@ class QuotaPage(Page):
     def before_next_page(self):
         filtering(self)
 
+########
+# Ballot pages
+########
+class BaWelcome(Page):
+    form_model = Player
 
+    def before_next_page(self):
+        self.group.counter += 1
+
+    def vars_for_template(self):
+        return {"participant_label": safe_json(self.participant.label),
+                "quota": safe_json(self.player.quota),
+                "screenout": safe_json(self.player.screenout)}
+
+
+# ballot as a table
+class Ballot1(Page):
+    form_model = Player
+    form_fields = ['ba_ballot1']
+
+    def vars_for_template(self):
+        return {'ba_group_assignment': safe_json(self.player.ba_group_assignment)}
+
+
+# ballot as a picture
+class Ballot2(Page):
+    form_model = Player
+    form_fields = ['ba_ballot_pic1']
+
+    def vars_for_template(self):
+        return {'ba_group_assignment': safe_json(self.player.ba_group_assignment)}
+
+
+# group 0 will get ideology1 page before ballot
+class BaIdeology1(Page):
+    form_model = Player
+    form_fields = ['ba_positioning', 'ba_party', 'ba_party_pos', 'ba_opinion1', 'ba_opinion2', 'ba_opinion3',
+                   'ba_opinion4', 'ba_opinion5', 'ba_women1', 'ba_women2', 'ba_women3', 'ba_women4', 'ba_women5',
+                   'ba_women6', 'ba_women7', 'ba_women8', 'ba_women9', 'ba_women10', 'ba_men1', 'ba_men2', 'ba_men3',
+                   'ba_men4', 'ba_men5', 'ba_men6', 'ba_men7', 'ba_men8', 'ba_men9', 'ba_men10']
+
+    def is_displayed(self):
+        return self.player.ba_ideology_assignment == 0
+
+
+# group 1 will get ideology2 page after ballot
+class BaIdeology2(Page):
+    form_model = Player
+    form_fields = ['ba_positioning', 'ba_party', 'ba_party_pos', 'ba_opinion1', 'ba_opinion2', 'ba_opinion3',
+                   'ba_opinion4', 'ba_opinion5', 'ba_women1', 'ba_women2', 'ba_women3', 'ba_women4', 'ba_women5',
+                   'ba_women6', 'ba_women7', 'ba_women8', 'ba_women9', 'ba_women10', 'ba_men1', 'ba_men2', 'ba_men3',
+                   'ba_men4', 'ba_men5', 'ba_men6', 'ba_men7', 'ba_men8', 'ba_men9', 'ba_men10']
+
+    def is_displayed(self):
+        return self.player.ba_ideology_assignment == 1
+
+########
 #Social Movement Pages
+########
 class SmWelcome(Page):
     form_model = Player
     form_fields = ['sm_time_welcome'] 
@@ -42,69 +101,11 @@ class SmDemonstrationPage(Page):
     form_fields=['sm_time_demonstrationpage', 'sm_demonstration_change', 'sm_demonstration_democracy', 'sm_demonstration_views',
     'sm_politicians', 'sm_influence', 'sm_interests']
 
-
-
-
-# Ballot pages
-class BaWelcome(Page):
-    form_model = Player
-
-    def before_next_page(self):
-        self.group.counter += 1
-
-
-# ballot as a table
-
-class Ballot1(Page):
-    form_model = Player
-    form_fields = ['ba_ballot1']
-
-    def vars_for_template(self):
-        return {'ba_group_assignment': safe_json(self.player.ba_group_assignment)}
-
-
-# ballot as a picture
-
-class Ballot2(Page):
-    form_model = Player
-    form_fields = ['ba_ballot_pic1']
-
-    def vars_for_template(self):
-        return {'ba_group_assignment': safe_json(self.player.ba_group_assignment)}
-
-
-# group 0 will get ideology1 page before ballot
-
-class BaIdeology1(Page):
-    form_model = Player
-    form_fields = ['ba_positioning', 'ba_party', 'ba_party_pos', 'ba_opinion1', 'ba_opinion2', 'ba_opinion3',
-                   'ba_opinion4', 'ba_opinion5', 'ba_women1', 'ba_women2', 'ba_women3', 'ba_women4', 'ba_women5',
-                   'ba_women6', 'ba_women7', 'ba_women8', 'ba_women9', 'ba_women10', 'ba_men1', 'ba_men2', 'ba_men3',
-                   'ba_men4', 'ba_men5', 'ba_men6', 'ba_men7', 'ba_men8', 'ba_men9', 'ba_men10']
-
-    def is_displayed(self):
-        return self.player.ba_ideology_assignment == 0
-
-
-# group 1 will get ideology2 page after ballot
-
-class BaIdeology2(Page):
-    form_model = Player
-    form_fields = ['ba_positioning', 'ba_party', 'ba_party_pos', 'ba_opinion1', 'ba_opinion2', 'ba_opinion3',
-                   'ba_opinion4', 'ba_opinion5', 'ba_women1', 'ba_women2', 'ba_women3', 'ba_women4', 'ba_women5',
-                   'ba_women6', 'ba_women7', 'ba_women8', 'ba_women9', 'ba_women10', 'ba_men1', 'ba_men2', 'ba_men3',
-                   'ba_men4', 'ba_men5', 'ba_men6', 'ba_men7', 'ba_men8', 'ba_men9', 'ba_men10']
-
-    def is_displayed(self):
-        return self.player.ba_ideology_assignment == 1
-
-
-
-
+########
 # Charisma Pages
+########
 class ChIntro(Page):
     form_model = Player
-
 
 class ChPictureAudio(Page):
     form_model = Player
@@ -165,8 +166,9 @@ class CvDemoPage3(Page):
                    'ba_immigration2', 'ba_immigration3']
 
     
-
+########
 #General EndPage
+########
 class EndPage(Page):
     form_model = Player
     form_fields=['time_endpage']
@@ -197,7 +199,6 @@ page_sequence = [
                 SmPoliticalPage,
                 SmDemonstrationPage,
 
-
                 # Charisma Pages
                 ChIntro,
                 ChPictureAudio,
@@ -206,7 +207,7 @@ page_sequence = [
                 ChSurvey_Charisma2,
                 ChEndPage,
 
-                # control variables
+                # Control Variables
                 CvDemoPage,
                 CvDemoPage2,
                 CvDemoPage3,

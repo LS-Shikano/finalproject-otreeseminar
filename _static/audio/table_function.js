@@ -42,7 +42,7 @@ function tableCreate(start, end) {
     const ValNames = ["1", "2", "3", "4", "5", "6"]
     const sIndex = []
     for (let i = start; i<= end; i++) {
-        console.log(i)
+        // console.log(i)
 
         a = shuffled_lst[i]
         x = lst2.indexOf(a)
@@ -144,7 +144,7 @@ function tableCreate(start, end) {
                 x.setAttribute("name", VarNames[c]);
                 x.setAttribute('align','center');
                 td.appendChild(x);
-                console.log(VarNames[c])
+                // console.log(VarNames[c])
             }
         }
         ind_count += 1 // change var name when new row is inserted

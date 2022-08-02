@@ -84,7 +84,7 @@ Bitte hören Sie sich die Audioaufnahme an
            }
 
         document.getElementById("browserId").value = browserName
-        console.log(browserName)
+        // console.log(browserName)
 
 
 
@@ -93,10 +93,10 @@ Bitte hören Sie sich die Audioaufnahme an
 
    var med = document.createElement("media");
    x = navigator.mediaDevices.enumerateDevices()
-   console.log(x)
+  //  console.log(x)
         //media_div.appendChild(med)
 
-   console.log("secon try")
+  //  console.log("secon try")
 
 
 
@@ -157,7 +157,7 @@ Bitte hören Sie sich die Audioaufnahme an
     // var ch_image = choose_image()
 
     if (localStorage.getItem("Img") == null){ // check if image is already stored
-        console.log("no variable saved yet")
+        // console.log("no variable saved yet")
         var ch_image = choose_image()
         localStorage.setItem("Img", ch_image); // try to store the image variable, that after refresh same image is shown
         show_image(ch_image)
@@ -165,7 +165,7 @@ Bitte hören Sie sich die Audioaufnahme an
     }
 
     else{
-        console.log("saved yes")
+        // console.log("saved yes")
         var ch_img = localStorage.getItem("Img");
          show_image(ch_img)
         document.getElementById("image").value = ch_img // store image as variable
@@ -201,7 +201,7 @@ Bitte hören Sie sich die Audioaufnahme an
     function choose_audio(){
         var y = group_assignment
         var group_audio = groups_audio[y-1] // because zero based index but groups start at 1
-        console.log(group_audio)
+        // console.log(group_audio)
         const ran2 = Math.floor(Math.random() * group_audio.length)
         const audio_src =  group_audio[ran2];
 

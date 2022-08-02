@@ -87,7 +87,7 @@ class Player(BasePlayer):
     operating_system = models.IntegerField(initial = -999)
     screen_width = models.IntegerField(initial = -999)
     screen_height = models.IntegerField(initial = -999)
-    # screenout = models.IntegerField(initial=0)
+    screenout = models.IntegerField(initial=0)
     quota = models.IntegerField(initial=0)
     age = models.IntegerField(initial = -999)
     gender = models.IntegerField(initial=-999)
