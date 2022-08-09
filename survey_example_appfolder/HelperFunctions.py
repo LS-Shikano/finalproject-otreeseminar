@@ -10,8 +10,10 @@ def filtering(self):
 
 #DECLARING ALL THE QUOTA REACHED
 #GENDER
-    if self.player.gender == 1 and self.group.gender_group_male >= 534:
-            self.player.quota = 1
+    # if self.player.gender == 1 and self.group.gender_group_male >= 534:
+    #         self.player.quota = 1
+    if self.player.gender == 1 and self.group.gender_group_male >= 1:
+        self.player.quota = 1
 
     if self.player.gender == 2 and self.group.gender_group_female >= 516:
             self.player.quota = 1
