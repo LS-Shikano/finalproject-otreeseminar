@@ -64,7 +64,7 @@
 <br>
 <input type="radio" name="ba_party" value="2" /> CDU
 <br>
-<input type="radio" name="ba_party" value="3" /> Grüne
+<input type="radio" name="ba_party" value="3" /> Bündnis 90/ Die Grünen
 <br>
 <input type="radio" name="ba_party" value="4" /> FDP
 <br>
@@ -72,9 +72,10 @@
 <br>
 <input type="radio" name="ba_party" value="6" /> Linke
 <br>
-<input type="radio" name="ba_party" value="7" /> Sonstige
-<br>
 <input type="radio" name="ba_party" value="-999" /> Würde nicht wählen
+<br>
+<input type="radio" name="ba_party" value="7" /> Sonstige Partei, bitte angeben:
+    <input type="text" name="ba_party_else">
 <br>
 {{ formfield_errors 'ba_party' }}
 <br>
@@ -84,7 +85,7 @@
 <div class="mb-3 bg-light border pt-2 pb-2 px-2 ">
     <fieldset>
         <div class="table">
-            <table class="table"> <p><b>Wo würden Sie ,die Partei die Sie theoretisch am nächsten Sonntag wählen würden,auf dieser Skala einordnen,
+            <table class="table"> <p><b>Wo würden Sie ,die Partei die Sie  am nächsten Sonntag wählen würden,auf dieser Skala einordnen,
                 wenn 0 für links und 11 für rechts steht?*</b></p>
                 <tbody>
                     <tr>

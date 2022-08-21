@@ -5,15 +5,19 @@
 {% block title %}
 {% endblock %}
 
+{% block scripts %}
+<script src="{% static 'persist-raw.js' %}"></script>
+{% endblock %}
+
 {% block content %}
 
 <hr>
-Im Folgenden stellen wir Ihnen ein paar Fragen zu Ihren politischen Präferenzen:
+Im Folgenden stellen wir Ihnen ein paar Fragen zu Ihren politischen Präferenzen (*Pflichtfeld)
 
 <br>
 <br>
 
-<p><b>Was halten Sie ganz allgemein von den folgenden einzelnen Parteien?</b></p>
+<p><b>Was halten Sie ganz allgemein von den folgenden einzelnen Parteien?*</b></p>
 
 <p> Benutzen Sie dafür bitte die untenstehende Skala von -5 bis +5 mit einem Nullpunkt in der Mitte.
     +5 bedeutet, dass Sie sehr viel von der Partei halten; -5 bedeutet, dass Sie überhaupt nichts von der Partei halten.
@@ -41,137 +45,146 @@ Mit den Werten dazwischen können Sie Ihre Meinung abstufen.<p>
             <tbody>
                 <tr>
                 <th>SPD</th>
-                <th><input type="radio" name="therm_spd" value="-5"  ></th>
-                <th><input type="radio" name="therm_spd" value="-4"  ></th>
-                <th><input type="radio" name="therm_spd" value="-3"  ></th>
-                <th><input type="radio" name="therm_spd" value="-2"  ></th>
-                <th><input type="radio" name="therm_spd" value="-1"  ></th>
-                <th><input type="radio" name="therm_spd" value="0"  ></th>
-                <th><input type="radio" name="therm_spd" value="1"  ></th>
-                <th><input type="radio" name="therm_spd" value="2"  ></th>
-                <th><input type="radio" name="therm_spd" value="3"  ></th>
-                <th><input type="radio" name="therm_spd" value="4"  ></th>
-                <th><input type="radio" name="therm_spd" value="5"  ></th>
-                <th><input type="radio" name="therm_spd" value="-888"  ></th>
+                <th><input class="persist" type="radio" name="therm_spd" value="-5"  ></th>
+                <th><input class="persist" type="radio" name="therm_spd" value="-4"  ></th>
+                <th><input class="persist" type="radio" name="therm_spd" value="-3"  ></th>
+                <th><input class="persist" type="radio" name="therm_spd" value="-2"  ></th>
+                <th><input class="persist" type="radio" name="therm_spd" value="-1"  ></th>
+                <th><input class="persist" type="radio" name="therm_spd" value="0"  ></th>
+                <th><input class="persist" type="radio" name="therm_spd" value="1"  ></th>
+                <th><input class="persist" type="radio" name="therm_spd" value="2"  ></th>
+                <th><input class="persist" type="radio" name="therm_spd" value="3"  ></th>
+                <th><input class="persist" type="radio" name="therm_spd" value="4"  ></th>
+                <th><input class="persist" type="radio" name="therm_spd" value="5"  ></th>
+                <th><input class="persist" type="radio" name="therm_spd" value="-888"  ></th>
             </tr>
             <tr>
                 <th>CDU</th>
-                <th><input type="radio" name="therm_cdu" value="-5" ></th>
-                <th><input type="radio" name="therm_cdu" value="-4" ></th>
-                <th><input type="radio" name="therm_cdu" value="-3" ></th>
-                <th><input type="radio" name="therm_cdu" value="-2" ></th>
-                <th><input type="radio" name="therm_cdu" value="-1" ></th>
-                <th><input type="radio" name="therm_cdu" value="0" ></th>
-                <th><input type="radio" name="therm_cdu" value="1" ></th>
-                <th><input type="radio" name="therm_cdu" value="2" ></th>
-                <th><input type="radio" name="therm_cdu" value="3" ></th>
-                <th><input type="radio" name="therm_cdu" value="4" ></th>
-                <th><input type="radio" name="therm_cdu" value="5" ></th>
-                <th><input type="radio" name="therm_cdu" value="-888" ></th>
+                <th><input class="persist" type="radio" name="therm_cdu" value="-5" ></th>
+                <th><input class="persist" type="radio" name="therm_cdu" value="-4" ></th>
+                <th><input class="persist" type="radio" name="therm_cdu" value="-3" ></th>
+                <th><input class="persist" type="radio" name="therm_cdu" value="-2" ></th>
+                <th><input class="persist" type="radio" name="therm_cdu" value="-1" ></th>
+                <th><input class="persist" type="radio" name="therm_cdu" value="0" ></th>
+                <th><input class="persist" type="radio" name="therm_cdu" value="1" ></th>
+                <th><input class="persist" type="radio" name="therm_cdu" value="2" ></th>
+                <th><input class="persist" type="radio" name="therm_cdu" value="3" ></th>
+                <th><input class="persist" type="radio" name="therm_cdu" value="4" ></th>
+                <th><input class="persist" type="radio" name="therm_cdu" value="5" ></th>
+                <th><input class="persist" type="radio" name="therm_cdu" value="-888" ></th>
             </tr>
             <tr>
                 <th>CSU</th>
-                <th><input type="radio" name="therm_csu" value="-5" ></th>
-                <th><input type="radio" name="therm_csu" value="-4" ></th>
-                <th><input type="radio" name="therm_csu" value="-3" ></th>
-                <th><input type="radio" name="therm_csu" value="-2" ></th>
-                <th><input type="radio" name="therm_csu" value="-1" ></th>
-                <th><input type="radio" name="therm_csu" value="0" ></th>
-                <th><input type="radio" name="therm_csu" value="1" ></th>
-                <th><input type="radio" name="therm_csu" value="2" ></th>
-                <th><input type="radio" name="therm_csu" value="3" ></th>
-                <th><input type="radio" name="therm_csu" value="4" ></th>
-                <th><input type="radio" name="therm_csu" value="5" ></th>
-                <th><input type="radio" name="therm_csu" value="-888" ></th>
+                <th><input class="persist" type="radio" name="therm_csu" value="-5" ></th>
+                <th><input class="persist" type="radio" name="therm_csu" value="-4" ></th>
+                <th><input class="persist" type="radio" name="therm_csu" value="-3" ></th>
+                <th><input class="persist" type="radio" name="therm_csu" value="-2" ></th>
+                <th><input class="persist" type="radio" name="therm_csu" value="-1" ></th>
+                <th><input class="persist" type="radio" name="therm_csu" value="0" ></th>
+                <th><input class="persist" type="radio" name="therm_csu" value="1" ></th>
+                <th><input class="persist" type="radio" name="therm_csu" value="2" ></th>
+                <th><input class="persist" type="radio" name="therm_csu" value="3" ></th>
+                <th><input class="persist" type="radio" name="therm_csu" value="4" ></th>
+                <th><input class="persist" type="radio" name="therm_csu" value="5" ></th>
+                <th><input class="persist" type="radio" name="therm_csu" value="-888" ></th>
             </tr>
             
             <tr>
                 <th>Grüne</th>
-                <th><input type="radio" name="therm_gruene" value="-5" ></th>
-                <th><input type="radio" name="therm_gruene" value="-4" ></th>
-                <th><input type="radio" name="therm_gruene" value="-3" ></th>
-                <th><input type="radio" name="therm_gruene" value="-2" ></th>
-                <th><input type="radio" name="therm_gruene" value="-1" ></th>
-                <th><input type="radio" name="therm_gruene" value="0" ></th>
-                <th><input type="radio" name="therm_gruene" value="1" ></th>
-                <th><input type="radio" name="therm_gruene" value="2" ></th>
-                <th><input type="radio" name="therm_gruene" value="3" ></th>
-                <th><input type="radio" name="therm_gruene" value="4" ></th>
-                <th><input type="radio" name="therm_gruene" value="5" ></th>
-                <th><input type="radio" name="therm_gruene" value="-888" ></th>
+                <th><input class="persist" type="radio" name="therm_gruene" value="-5" ></th>
+                <th><input class="persist" type="radio" name="therm_gruene" value="-4" ></th>
+                <th><input class="persist" type="radio" name="therm_gruene" value="-3" ></th>
+                <th><input class="persist" type="radio" name="therm_gruene" value="-2" ></th>
+                <th><input class="persist" type="radio" name="therm_gruene" value="-1" ></th>
+                <th><input class="persist" type="radio" name="therm_gruene" value="0" ></th>
+                <th><input class="persist" type="radio" name="therm_gruene" value="1" ></th>
+                <th><input class="persist" type="radio" name="therm_gruene" value="2" ></th>
+                <th><input class="persist" type="radio" name="therm_gruene" value="3" ></th>
+                <th><input class="persist" type="radio" name="therm_gruene" value="4" ></th>
+                <th><input class="persist" type="radio" name="therm_gruene" value="5" ></th>
+                <th><input class="persist" type="radio" name="therm_gruene" value="-888" ></th>
             </tr>
             <tr>
                 <th>FDP</th>
-                <th><input type="radio" name="therm_fdp" value="-5" ></th>
-                <th><input type="radio" name="therm_fdp" value="-4" ></th>
-                <th><input type="radio" name="therm_fdp" value="-3" ></th>
-                <th><input type="radio" name="therm_fdp" value="-2" ></th>
-                <th><input type="radio" name="therm_fdp" value="-1" ></th>
-                <th><input type="radio" name="therm_fdp" value="0" ></th>
-                <th><input type="radio" name="therm_fdp" value="1" ></th>
-                <th><input type="radio" name="therm_fdp" value="2" ></th>
-                <th><input type="radio" name="therm_fdp" value="3" ></th>
-                <th><input type="radio" name="therm_fdp" value="4" ></th>
-                <th><input type="radio" name="therm_fdp" value="5" ></th>
-                <th><input type="radio" name="therm_fdp" value="-888" ></th>
+                <th><input class="persist" type="radio" name="therm_fdp" value="-5" ></th>
+                <th><input class="persist" type="radio" name="therm_fdp" value="-4" ></th>
+                <th><input class="persist" type="radio" name="therm_fdp" value="-3" ></th>
+                <th><input class="persist" type="radio" name="therm_fdp" value="-2" ></th>
+                <th><input class="persist" type="radio" name="therm_fdp" value="-1" ></th>
+                <th><input class="persist" type="radio" name="therm_fdp" value="0" ></th>
+                <th><input class="persist" type="radio" name="therm_fdp" value="1" ></th>
+                <th><input class="persist" type="radio" name="therm_fdp" value="2" ></th>
+                <th><input class="persist" type="radio" name="therm_fdp" value="3" ></th>
+                <th><input class="persist" type="radio" name="therm_fdp" value="4" ></th>
+                <th><input class="persist" type="radio" name="therm_fdp" value="5" ></th>
+                <th><input class="persist" type="radio" name="therm_fdp" value="-888" ></th>
             </tr>
             <tr>
                 <th>AfD</th>
-                <th><input type="radio" name="therm_afd" value="-5" ></th>
-                <th><input type="radio" name="therm_afd" value="-4" ></th>
-                <th><input type="radio" name="therm_afd" value="-3" ></th>
-                <th><input type="radio" name="therm_afd" value="-2" ></th>
-                <th><input type="radio" name="therm_afd" value="-1" ></th>
-                <th><input type="radio" name="therm_afd" value="0" ></th>
-                <th><input type="radio" name="therm_afd" value="1" ></th>
-                <th><input type="radio" name="therm_afd" value="2" ></th>
-                <th><input type="radio" name="therm_afd" value="3" ></th>
-                <th><input type="radio" name="therm_afd" value="4" ></th>
-                <th><input type="radio" name="therm_afd" value="5" ></th>
-                <th><input type="radio" name="therm_afd" value="-888" ></th>
+                <th><input class="persist" type="radio" name="therm_afd" value="-5" ></th>
+                <th><input class="persist" type="radio" name="therm_afd" value="-4" ></th>
+                <th><input class="persist" type="radio" name="therm_afd" value="-3" ></th>
+                <th><input class="persist" type="radio" name="therm_afd" value="-2" ></th>
+                <th><input class="persist" type="radio" name="therm_afd" value="-1" ></th>
+                <th><input class="persist" type="radio" name="therm_afd" value="0" ></th>
+                <th><input class="persist" type="radio" name="therm_afd" value="1" ></th>
+                <th><input class="persist" type="radio" name="therm_afd" value="2" ></th>
+                <th><input class="persist" type="radio" name="therm_afd" value="3" ></th>
+                <th><input class="persist" type="radio" name="therm_afd" value="4" ></th>
+                <th><input class="persist" type="radio" name="therm_afd" value="5" ></th>
+                <th><input class="persist" type="radio" name="therm_afd" value="-888" ></th>
             </tr>
             <tr>
                 <th>DIE LINKE</th>
-                <th><input type="radio" name="therm_linke" value="-5" ></th>
-                <th><input type="radio" name="therm_linke" value="-4" ></th>
-                <th><input type="radio" name="therm_linke" value="-3" ></th>
-                <th><input type="radio" name="therm_linke" value="-2" ></th>
-                <th><input type="radio" name="therm_linke" value="-1" ></th>
-                <th><input type="radio" name="therm_linke" value="0" ></th>
-                <th><input type="radio" name="therm_linke" value="1" ></th>
-                <th><input type="radio" name="therm_linke" value="2" ></th>
-                <th><input type="radio" name="therm_linke" value="3" ></th>
-                <th><input type="radio" name="therm_linke" value="4" ></th>
-                <th><input type="radio" name="therm_linke" value="5" ></th>
-                <th><input type="radio" name="therm_linke" value="-888" ></th>
+                <th><input class="persist" type="radio" name="therm_linke" value="-5" ></th>
+                <th><input class="persist" type="radio" name="therm_linke" value="-4" ></th>
+                <th><input class="persist" type="radio" name="therm_linke" value="-3" ></th>
+                <th><input class="persist" type="radio" name="therm_linke" value="-2" ></th>
+                <th><input class="persist" type="radio" name="therm_linke" value="-1" ></th>
+                <th><input class="persist" type="radio" name="therm_linke" value="0" ></th>
+                <th><input class="persist" type="radio" name="therm_linke" value="1" ></th>
+                <th><input class="persist" type="radio" name="therm_linke" value="2" ></th>
+                <th><input class="persist" type="radio" name="therm_linke" value="3" ></th>
+                <th><input class="persist" type="radio" name="therm_linke" value="4" ></th>
+                <th><input class="persist" type="radio" name="therm_linke" value="5" ></th>
+                <th><input class="persist" type="radio" name="therm_linke" value="-888" ></th>
             </tr>
             
             </tbody>
         </table>
     </div>
 <br>
+{{formfield_errors 'therm_cdu' }}
+{{formfield_errors 'therm_csu' }}
+{{formfield_errors 'therm_afd' }}
+{{formfield_errors 'therm_gruene' }}
+{{formfield_errors 'therm_linke' }}
+{{formfield_errors 'therm_spd' }}
+{{formfield_errors 'therm_fdp' }}
 
 <br>
-<p><b>Sind Sie wahlberechtigt für die Bundestagswahl in Deutschland?</b></p>
-<input type="radio" name="eligibility" value="1" /> Ja
+<p><b>Sind Sie wahlberechtigt für die Bundestagswahl in Deutschland?*</b></p>
+<input class="persist" type="radio" name="eligibility" value="1" /> Ja
 <br>
-<input type="radio" name="eligibility" value="2" /> Nein
+<input class="persist" type="radio" name="eligibility" value="2" /> Nein
 <br>
-<input type="radio" name="eligibility" value="-888" /> Weiß nicht
+<input class="persist" type="radio" name="eligibility" value="-888" /> Weiß nicht
 <br>
-<input type="radio" name="eligibility" value="-999" /> Keine Angabe
+<input class="persist" type="radio" name="eligibility" value="-999" /> Keine Angabe
 <br>
+{{formfield_errors 'eligibility' }}
 
 <br>
-<p><b>Haben Sie bereits in der Vergangenheit an Bundestagswahlen teilgenommen?</b></p>
-<input type="radio" name="participation" value="1" /> Ja
+<p><b>Haben Sie bereits in der Vergangenheit an Bundestagswahlen teilgenommen?*</b></p>
+<input class="persist" type="radio" name="participation" value="1" /> Ja
 <br>
-<input type="radio" name="participation" value="2" /> Nein
+<input class="persist" type="radio" name="participation" value="2" /> Nein
 <br>
-<input type="radio" name="participation" value="-888" /> Weiß nicht
+<input class="persist" type="radio" name="participation" value="-888" /> Weiß nicht
 <br>
-<input type="radio" name="participation" value="-999" /> Keine Angabe
+<input class="persist" type="radio" name="participation" value="-999" /> Keine Angabe
 <br>
+{{formfield_errors 'participation' }}
 
 <br>
 

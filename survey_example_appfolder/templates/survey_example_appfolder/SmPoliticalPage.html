@@ -31,7 +31,7 @@ table { border-collapse: collapse; }
     <fieldset>
         <div class="table-responsive">
         <div class="table">
-            <table class="table w-auto"> Inwieweit stimmen Sie den folgenden Aussagen zu oder nicht zu? (Pflichtfelder)
+            <table class="table w-auto"> Inwieweit stimmen Sie den folgenden Aussagen zu oder nicht zu? (*Pflichtfelder)
                 <tr>
                     <td style="width: 20%"></td>
                     <th style="width: 13%">
@@ -65,7 +65,7 @@ table { border-collapse: collapse; }
                     </tr>
                     <!-- political_participation -->
                     <tr>
-                        <th>Die ganze Politik ist so kompliziert, dass jemand wie ich gar nicht versteht, was vorgeht.
+                        <th>Die ganze Politik ist so kompliziert, dass jemand wie ich gar nicht versteht, was vorgeht.*
                         </th>
                         <th><input class="persist" type="radio" name="sm_missing_knowledge" value="1"></th>
                         <th><input class="persist" type="radio" name="sm_missing_knowledge" value="2"></th>
@@ -73,56 +73,62 @@ table { border-collapse: collapse; }
                         <th><input class="persist" type="radio" name="sm_missing_knowledge" value="4"></th>
                         <th class='line'><input class="persist" type="radio" name="sm_missing_knowledge" value="5"></th>
                         <th><input class="persist" type="radio" name="sm_missing_knowledge" value="-888" style= 'text-align:right'></th>
+                        {{formfield_errors 'sm_missing_knowledge' }}
                     </tr>
                     <!-- own_knowledge -->
                     <tr>
-                        <th>Im Allgemeinen weiß ich eher weniger über Politik.</th>
+                        <th>Im Allgemeinen weiß ich eher weniger über Politik.*</th>
                         <th><input class="persist" type="radio" name="sm_own_knowledge" value="1"></th>
                         <th><input class="persist" type="radio" name="sm_own_knowledge" value="2"></th>
                         <th><input class="persist" type="radio" name="sm_own_knowledge" value="3"></th>
                         <th><input class="persist" type="radio" name="sm_own_knowledge" value="4"></th>
                         <th class='line'><input class="persist" type="radio" name="sm_own_knowledge" value="5"></th>
                         <th><input class="persist" type="radio" name="sm_own_knowledge" value="-888"></th>
+                        {{formfield_errors 'sm_own_knowledge' }}
                     </tr>
                     <!-- general_knowledge -->
                     <tr>
-                        <th>Die Durchschnittsbürger*innen verstehen nur wenig von Politik.</th>
+                        <th>Die Durchschnittsbürger*innen verstehen nur wenig von Politik.*</th>
                         <th><input class="persist" type="radio" name="sm_general_knowledge" value="1"></th>
                         <th><input class="persist" type="radio" name="sm_general_knowledge" value="2"></th>
                         <th><input class="persist" type="radio" name="sm_general_knowledge" value="3"></th>
                         <th><input class="persist" type="radio" name="sm_general_knowledge" value="4"></th>
                         <th class='line'><input class="persist" type="radio" name="sm_general_knowledge" value="5"></th>
                         <th><input class="persist" type="radio" name="sm_general_knowledge" value="-888"></th>
+                        {{formfield_errors 'sm_general_knowledge' }}
                     </tr>
                     <!-- future -->
                     <tr>
-                        <th>Wenn ich an die Zukunft denke, kann ich zuversichtlich sein.</th>
+                        <th>Wenn ich an die Zukunft denke, kann ich zuversichtlich sein.*</th>
                         <th><input class="persist" type="radio" name="sm_future" value="1"></th>
                         <th><input class="persist" type="radio" name="sm_future" value="2"></th>
                         <th><input class="persist" type="radio" name="sm_future" value="3"></th>
                         <th><input class="persist" type="radio" name="sm_future" value="4"></th>
                         <th class='line'><input class="persist" type="radio" name="sm_future" value="5"></th>
                         <th><input class="persist" type="radio" name="sm_future" value="-888"></th>
+                        {{formfield_errors 'sm_future' }}
                     </tr>
                     <!-- unsure -->
                     <tr>
-                        <th>Wenn ich die Ereignisse seit Anfang der Pandemie betrachte, werde ich unsicher.</th>
+                        <th>Wenn ich die Ereignisse seit Anfang der Pandemie betrachte, werde ich unsicher.*</th>
                         <th><input class="persist" type="radio" name="sm_unsure" value="1"></th>
                         <th><input class="persist" type="radio" name="sm_unsure" value="2"></th>
                         <th><input class="persist" type="radio" name="sm_unsure" value="3"></th>
                         <th><input class="persist" type="radio" name="sm_unsure" value="4"></th>
                         <th class='line'><input class="persist" type="radio" name="sm_unsure" value="5"></th>
                         <th><input class="persist" type="radio" name="sm_unsure" value="-888"></th>
+                        {{formfield_errors 'sm_unsure' }}
                     </tr>
                     <!-- olddays -->
                     <tr>
-                        <th>Früher waren die Leute besser dran, weil jede*r wusste, was man zu tun hatte.</th>
+                        <th>Früher waren die Leute besser dran, weil jede*r wusste, was man zu tun hatte.*</th>
                         <th><input class="persist" type="radio" name="sm_olddays" value="1"></th>
                         <th><input class="persist" type="radio" name="sm_olddays" value="2"></th>
                         <th><input class="persist" type="radio" name="sm_olddays" value="3"></th>
                         <th><input class="persist" type="radio" name="sm_olddays" value="4"></th>
                         <th class='line'><input class="persist" type="radio" name="sm_olddays" value="5"></th>
                         <th><input class="persist" type="radio" name="sm_olddays" value="-888"></th>
+                        {{formfield_errors 'sm_olddays' }}
                     </tr>
                 </tbody>
             </table>
@@ -130,12 +136,7 @@ table { border-collapse: collapse; }
     </fieldset>
 </div>
 </div>
-{{formfield_errors 'sm_missing_knowledge' }}
-{{formfield_errors 'sm_own_knowledge' }}
-{{formfield_errors 'sm_general_knowledge' }}
-{{formfield_errors 'sm_future' }}
-{{formfield_errors 'sm_unsure' }}
-{{formfield_errors 'sm_olddays' }}
+
 
 <button class="otree-btn-next btn btn-primary next-button otree-next-button">
     Weiter

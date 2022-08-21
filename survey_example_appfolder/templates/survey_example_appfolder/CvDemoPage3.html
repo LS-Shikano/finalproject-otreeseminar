@@ -5,89 +5,104 @@
 {% block title %}
 {% endblock %}
 
+{% block scripts %}
+<script src="{% static 'persist-raw.js' %}"></script>
+{% endblock %}
+
 {% block content %}
 
 <hr>
-
+<p style="text-align:right;"><b>*Pflichtfelder</b></p>
 
 <div class="mb-3 bg-light border pt-2 pb-2 px-2" >
-<p><b>Wie hoch ist Ihr monatliches Netto-Einkommen? Damit ist  die Summe,
+<p><b>Wie hoch ist Ihr monatliches Netto-Einkommen?* Damit ist  die Summe,
     die nach Abzug von Steuern und Sozialversicherungsbeiträgen übrig bleibt, gemeint.</b></p>
-    <input  type="radio" name="household_income"  value="1"/> unter 450 Euro
+    <input class="persist" type="radio" name="household_income"  value="1"/> unter 450 Euro
     <br>
-    <input  type="radio" name="household_income"  value="2"/> 450 bis unter 750 Euro
+    <input class="persist" type="radio" name="household_income"  value="2"/> 450 bis unter 750 Euro
     <br>
-    <input  type="radio" name="household_income"  value="3"/> 750 bis unter 1000 Euro
+    <input class="persist" type="radio" name="household_income"  value="3"/> 750 bis unter 1000 Euro
     <br>
-    <input  type="radio" name="household_income"  value="4"/> 1000 bis unter 1250 Euro
+    <input class="persist" type="radio" name="household_income"  value="4"/> 1000 bis unter 1250 Euro
     <br>
-    <input  type="radio" name="household_income"  value="5"/> 1250 bis unter 1500 Euro
+    <input class="persist" type="radio" name="household_income"  value="5"/> 1250 bis unter 1500 Euro
     <br>
-    <input  type="radio" name="household_income"  value="6"/> 1500 bis unter 2000 Euro
+    <input class="persist" type="radio" name="household_income"  value="6"/> 1500 bis unter 2000 Euro
     <br>
-    <input  type="radio" name="household_income"  value="7"/> 2000 bis unter 2500 Eurp
+    <input class="persist" type="radio" name="household_income"  value="7"/> 2000 bis unter 2500 Eurp
     <br>
-    <input  type="radio" name="household_income"  value="8"/> 2500 bis unter 3000 Euro
+    <input class="persist" type="radio" name="household_income"  value="8"/> 2500 bis unter 3000 Euro
     <br>
-    <input  type="radio" name="household_income"  value="9"/> 3000 bis unter 4000 Euro
+    <input class="persist" type="radio" name="household_income"  value="9"/> 3000 bis unter 4000 Euro
     <br>
-    <input  type="radio" name="household_income"  value="10"/> 4000 bis unter 5000 Euro
+    <input class="persist" type="radio" name="household_income"  value="10"/> 4000 bis unter 5000 Euro
     <br>
-    <input  type="radio" name="household_income"  value="11"/> 5000 und mehr
+    <input class="persist" type="radio" name="household_income"  value="11"/> 5000 und mehr
     <br>
-    <input  type="radio" name="household_income"  value="-888"/> Weiß nicht
+    <input class="persist" type="radio" name="household_income"  value="-888"/> Weiß nicht
     <br>
-    <input  type="radio" name="household_income"  value="-999"/> Keine Angabe
+    <input class="persist" type="radio" name="household_income"  value="-999"/> Keine Angabe
     <br>
+    {{formfield_errors 'household_income' }}
 </div>
 
-<div class="mb-3 bg-light border pt-2 pb-2 px-2" >
-<p><b>Was ist Ihr höchster allgemeinbildender Schulabschluss?</b></p>
-<input  type="radio" name="general_education"  value="1"/> Kein Abschluss
-<br>
-<input  type="radio" name="general_education"  value="2"/> Hauptschulabschluss
-<br>
-<input  type="radio" name="general_education"  value="3"/> Realschulabschluss (Mittlere Reife)
-<br>
-<input  type="radio" name="general_education"  value="4"/> Fachhochschulreife
-<br>
-<input  type="radio" name="general_education"  value="5"/> Abitur
-<br>
-<input  type="radio" name="general_education"  value="6"/> Noch in der Schule
-<br>
-<input  type="radio" name="general_education"  value="-888"/> Weiß nicht
-</div>
 
 <div class="mb-3 bg-light border pt-2 pb-2 px-2" >
-<p><b>Wie viele Einwohner zählt Ihr Wohnort in etwa?</b></p>
-<input  type="radio" name="ba_location"  value="1"/> < 5.000 Einwohner
+<p><b>Was ist Ihr höchster allgemeinbildender Schulabschluss?*</b></p>
+<input class="persist" type="radio" name="general_education"  value="1"/> Kein Abschluss
 <br>
-<input  type="radio" name="ba_location"  value="2"/> 5.000-30.000 Einwohner
+<input class="persist" type="radio" name="general_education"  value="2"/> Hauptschulabschluss
 <br>
-<input  type="radio" name="ba_location"  value="3"/> 30.000-100.000 Einwohner
+<input class="persist" type="radio" name="general_education"  value="3"/> Realschulabschluss (Mittlere Reife)
 <br>
-<input  type="radio" name="ba_location"  value="4"/> 100.000-500.000 Einwohner
+<input class="persist" type="radio" name="general_education"  value="4"/> Fachhochschulreife
 <br>
-<input  type="radio" name="ba_location"  value="5"/> > 500.000 Einwohner
+<input class="persist" type="radio" name="general_education"  value="5"/> Abitur
 <br>
-<input  type="radio" name="ba_location"  value="-888"/> Weiß nicht
+<input class="persist" type="radio" name="general_education"  value="6"/> Noch in der Schule
+<br>
+<input class="persist" type="radio" name="general_education"  value="-888"/> Weiß nicht
+{{formfield_errors 'general_education' }}
 </div>
+
+
+<div class="mb-3 bg-light border pt-2 pb-2 px-2" >
+<p><b>Wie viele Einwohner zählt Ihr Wohnort in etwa?*</b></p>
+<input class="persist" type="radio" name="ba_location"  value="1"/> < 5.000 Einwohner
+<br>
+<input class="persist" type="radio" name="ba_location"  value="2"/> 5.000-30.000 Einwohner
+<br>
+<input class="persist" type="radio" name="ba_location"  value="3"/> 30.000-100.000 Einwohner
+<br>
+<input class="persist" type="radio" name="ba_location"  value="4"/> 100.000-500.000 Einwohner
+<br>
+<input class="persist" type="radio" name="ba_location"  value="5"/> > 500.000 Einwohner
+<br>
+<input class="persist" type="radio" name="ba_location"  value="-888"/> Weiß nicht
+{{formfield_errors 'ba_location' }}
+</div>
+
+
 
 
 <div class="mb-3 bg-light border pt-2 pb-2 px-2" >
 <p><b>In welchem Land sind Sie geboren?</b></p>
-<input  type="text" name="ba_immigration1"/>
+<input class="persist" type="text" name="ba_immigration1"/>
 <br>
+{{formfield_errors 'ba_immigration1' }}
 
 <br>
 <p><b>In welchem Land ist Ihre Mutter geboren?</b></p>
-<input  type="text" name="ba_immigration2"/>
+<input class="persist" type="text" name="ba_immigration2"/>
 <br>
+{{formfield_errors 'ba_immigration2' }}
 
 <br>
 <p><b>In welchem Land ist Ihr Vater geboren?</b></p>
-<input  type="text" name="ba_immigration3"/>
+<input class="persist" type="text" name="ba_immigration3"/>
+{{formfield_errors 'ba_immigration3' }}
 </div>
+
 
 <br>
 

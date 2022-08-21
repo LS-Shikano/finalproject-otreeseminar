@@ -30,7 +30,7 @@ table { border-collapse: collapse; }
     <fieldset>
         <div class="table-responsive">
         <div class="table">
-            <table class="table w-auto"> Was beeinflusst die Wahrscheinlichkeit Ihrer Teilnahme an der gezeigten Demonstration? (Pflichtfelder)
+            <table class="table w-auto"> Was beeinflusst die Wahrscheinlichkeit Ihrer Teilnahme an der gezeigten Demonstration? (*Pflichtfelder)
                 <tr>
                     <td></td>
                     <th style="width: 20%">
@@ -63,94 +63,103 @@ table { border-collapse: collapse; }
                     </tr>
                     <!-- topic_relevance -->
                     <tr>
-                        <th>Die Relevanz der Thematik.</th>
+                        <th>Die Relevanz der Thematik.*</th>
                         <th><input class="persist" type="radio" name="sm_topic_relevance" value="1"></th>
                         <th><input class="persist" type="radio" name="sm_topic_relevance" value="2"></th>
                         <th><input class="persist" type="radio" name="sm_topic_relevance" value="3"></th>
                         <th><input class="persist" type="radio" name="sm_topic_relevance" value="4"></th>
                         <th class="line"><input class="persist" type="radio" name="sm_topic_relevance" value="5"></th>
                         <th><input class="persist" type="radio" name="sm_topic_relevance" value="-888"></th>
+                        {{formfield_errors 'sm_topic_relevance' }}                        
                     </tr>
                     <!-- familiar_people -->
                     <tr>
-                        <th>Ob Personen hingehen, die ich kenne.</th>
+                        <th>Ob Personen hingehen, die ich kenne.*</th>
                         <th><input class="persist" type="radio" name="sm_familiar_people" value="1"></th>
                         <th><input class="persist" type="radio" name="sm_familiar_people" value="2"></th>
                         <th><input class="persist" type="radio" name="sm_familiar_people" value="3"></th>
                         <th><input class="persist" type="radio" name="sm_familiar_people" value="4"></th>
                         <th class="line"><input class="persist" type="radio" name="sm_familiar_people" value="5"></th>
                         <th><input class="persist" type="radio" name="sm_familiar_people" value="-888"></th>
+                        {{formfield_errors 'sm_familiar_people' }}
                     </tr>
                     <!-- booked -->
                     <tr>
-                        <th>Ob ich an dem Tag bereits andere Verpflichtungen habe.</th>
+                        <th>Ob ich an dem Tag bereits andere Verpflichtungen habe.*</th>
                         <th><input class="persist" type="radio" name="sm_booked" value="1"></th>
                         <th><input class="persist" type="radio" name="sm_booked" value="2"></th>
                         <th><input class="persist" type="radio" name="sm_booked" value="3"></th>
                         <th><input class="persist" type="radio" name="sm_booked" value="4"></th>
                         <th class="line"><input class="persist" type="radio" name="sm_booked" value="5"></th>
                         <th><input class="persist" type="radio" name="sm_booked" value="-888"></th>
+                        {{formfield_errors 'sm_booked' }}
                     </tr>
                     <!-- transportation -->
                     <tr>
-                        <th>Die Verfügbarkeit von Transportmitteln zu dem Veranstaltungsort.</th>
+                        <th>Die Verfügbarkeit von Transportmitteln zu dem Veranstaltungsort.*</th>
                         <th><input class="persist" type="radio" name="sm_transportation" value="1"></th>
                         <th><input class="persist" type="radio" name="sm_transportation" value="2"></th>
                         <th><input class="persist" type="radio" name="sm_transportation" value="3"></th>
                         <th><input class="persist" type="radio" name="sm_transportation" value="4"></th>
                         <th class="line"><input class="persist" type="radio" name="sm_transportation" value="5"></th>
                         <th><input class="persist" type="radio" name="sm_transportation" value="-888"></th>
+                        {{formfield_errors 'sm_transportation' }}
                     </tr>
                     <!-- reach -->
                     <tr>
-                        <th>Die Reichweite der Demonstration.</th>
+                        <th>Die Reichweite der Demonstration.*</th>
                         <th><input class="persist" type="radio" name="sm_reach" value="1"></th>
                         <th><input class="persist" type="radio" name="sm_reach" value="2"></th>
                         <th><input class="persist" type="radio" name="sm_reach" value="3"></th>
                         <th><input class="persist" type="radio" name="sm_reach" value="4"></th>
                         <th class="line"><input class="persist" type="radio" name="sm_reach" value="5"></th>
                         <th><input class="persist" type="radio" name="sm_reach" value="-888"></th>
+                        {{formfield_errors 'sm_reach' }}
                     </tr>
                     <!-- number -->
 
                     <tr>
-                        <th>Die Anzahl an Demonstrierenden.</th>
+                        <th>Die Anzahl an Demonstrierenden.*</th>
                         <th><input class="persist" type="radio" name="sm_number" value="1"></th>
                         <th><input class="persist" type="radio" name="sm_number" value="2"></th>
                         <th><input class="persist" type="radio" name="sm_number" value="3"></th>
                         <th><input class="persist" type="radio" name="sm_number" value="4"></th>
                         <th class="line"><input class="persist" type="radio" name="sm_number" value="5"></th>
                         <th><input class="persist" type="radio" name="sm_number" value="-888"></th>
+                        {{formfield_errors 'sm_number' }}
                     </tr>
                     <!-- crowd -->
                     <tr>
-                        <th>Bedenken bei größeren Menschenmengen.</th>
+                        <th>Bedenken bei größeren Menschenmengen.*</th>
                         <th><input class="persist" type="radio" name="sm_crowd" value="1"></th>
                         <th><input class="persist" type="radio" name="sm_crowd" value="2"></th>
                         <th><input class="persist" type="radio" name="sm_crowd" value="3"></th>
                         <th><input class="persist" type="radio" name="sm_crowd" value="4"></th>
                         <th class="line"><input class="persist" type="radio" name="sm_crowd" value="5"></th>
                         <th><input class="persist" type="radio" name="sm_crowd" value="-888"></th>
+                        {{formfield_errors 'sm_crowd' }}
                     </tr>
                     <!-- polarization -->
                     <tr>
-                        <th>Die Angst vor spaltender Wirkung.</th>
+                        <th>Die Angst vor spaltender Wirkung.*</th>
                         <th><input class="persist" type="radio" name="sm_polarization" value="1"></th>
                         <th><input class="persist" type="radio" name="sm_polarization" value="2"></th>
                         <th><input class="persist" type="radio" name="sm_polarization" value="3"></th>
                         <th><input class="persist" type="radio" name="sm_polarization" value="4"></th>
                         <th class="line"><input class="persist" type="radio" name="sm_polarization" value="5"></th>
                         <th><input class="persist" type="radio" name="sm_polarization" value="-888"></th>
+                        {{formfield_errors 'sm_polarization' }}
                     </tr>
                     <!--riots -->
                     <tr>
-                        <th>Die Angst vor Ausschreitungen.</th>
+                        <th>Die Angst vor Ausschreitungen.*</th>
                         <th><input class="persist" type="radio" name="sm_riots" value="1"></th>
                         <th><input class="persist" type="radio" name="sm_riots" value="2"></th>
                         <th><input class="persist" type="radio" name="sm_riots" value="3"></th>
                         <th><input class="persist" type="radio" name="sm_riots" value="4"></th>
                         <th class="line"><input class="persist" type="radio" name="sm_riots" value="5"></th>
                         <th><input class="persist" type="radio" name="sm_riots" value="-888"></th>
+                        {{formfield_errors 'sm_riots' }}
                     </tr>
                     <!--sm_participation_else -->
                     <tr>
@@ -171,13 +180,8 @@ table { border-collapse: collapse; }
 </div>
 </div>
 
-{{formfield_errors 'sm_familiar_people' }}
-{{formfield_errors 'sm_booked' }}
-{{formfield_errors 'sm_transportation' }}
-{{formfield_errors 'sm_reach' }}
-{{formfield_errors 'sm_crowd' }}
-{{formfield_errors 'sm_polarization' }}
-{{formfield_errors 'sm_riots' }}
+
+
 <button class="otree-btn-next btn btn-primary next-button otree-next-button">
     Weiter
 </button>

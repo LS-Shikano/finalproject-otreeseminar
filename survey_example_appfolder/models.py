@@ -102,8 +102,6 @@ class Player(BasePlayer):
 # Social Movement (sm) variables
     #general variables
     sm_group_assignment = models.IntegerField(initial=-999)
-    #SmWelcome
-    sm_time_welcome = models.StringField(initial=-999)
     #SmTreatmentPage
     sm_time_treatmentpage = models.StringField(initial=-999)
     sm_participation = models.IntegerField(initial=-999)
@@ -139,6 +137,7 @@ class Player(BasePlayer):
 
     # Ballot variables
     ba_party = models.IntegerField()
+    ba_party_else = models.StringField(initial = -999, blank = True) #voluntary
     ba_group_assignment = models.IntegerField()
     ba_ideology_assignment = models.IntegerField()
     ba_ballot1 = models.IntegerField(initial=-999)
