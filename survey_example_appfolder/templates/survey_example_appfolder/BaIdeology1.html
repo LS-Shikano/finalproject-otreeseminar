@@ -4,6 +4,34 @@
 
 {% block title %}
 {% endblock %}
+{%  block script %}
+    <script>
+    function popout_party_belonging(){
+    var ch_SPD = document.getElementById("check_spd")
+    var ch_cdu = document.getElementById("check_cdu")
+    var ch_grüne = document.getElementById("check_grüne")
+    var ch_fdp = document.getElementById("check_fdp")
+    var ch_afd = document.getElementById("check_afd")
+    var ch_linke = document.getElementById("check_linke")
+    var ch_no = document.getElementById("check_no")
+    var ch_others = document.getElementById("check_others")
+
+    var part_bel = document.getElementById("party belonging")
+
+    if (ch_SPD.checked == true | ch_cdu.checked == true || ch_grüne.checked == true || ch_fdp.checked == true ||
+        ch_afd.checked == true || ch_linke.checked == true) {
+        part_bel.style.display = "block"
+
+    }
+    else{
+        part_bel.style.display ="none"
+    }
+
+    }
+
+
+    </script>
+{%  endblock %}
 
 {% block scripts %}
 <script src="{% static 'persist-raw.js' %}"></script>
@@ -61,30 +89,32 @@
 <br>
 
 <br>
-<p><b>Wenn am nächsten Sonntag Bundestagswahl wäre, welche Partei würden Sie wählen?*</b></p>
-<input type="radio" name="ba_party" value="1" /> SPD
 <br>
-<input type="radio" name="ba_party" value="2" /> CDU
+<p><b>Wenn am Sonntag Bundestagswahl wäre, welche Partei würden Sie wählen?*</b></p>
+<input id = "check_spd" type="radio" name="ba_party" value="1" onclick="popout_party_belonging()" /> SPD
 <br>
-<input type="radio" name="ba_party" value="3" /> Bündnis 90/ Die Grünen
+<input id = "check_cdu" type="radio" name="ba_party" value="2" onclick="popout_party_belonging()"/> CDU
 <br>
-<input type="radio" name="ba_party" value="4" /> FDP
+<input id = "check_grüne" type="radio" name="ba_party" value="3" onclick="popout_party_belonging()"/> Bündnis 90/ Die Grünen
 <br>
-<input type="radio" name="ba_party" value="5" /> AfD
+<input id = "check_fdp" type="radio" name="ba_party" value="4" onclick="popout_party_belonging()" /> FDP
 <br>
-<input type="radio" name="ba_party" value="6" /> Linke
+<input id = "check_afd" type="radio" name="ba_party" value="5" onclick="popout_party_belonging()" /> AfD
 <br>
-<input type="radio" name="ba_party" value="-999" /> Würde nicht wählen
+<input id = "check_linke" type="radio" name="ba_party" value="6"  onclick="popout_party_belonging()"/> Linke
 <br>
-<input type="radio" name="ba_party" value="7" /> Sonstige Partei, bitte angeben:
+<input id = "check_no" type="radio" name="ba_party" value="-999" onclick="popout_party_belonging()" /> Würde nicht wählen
+<br>
+<input id = "check_others" type="radio" name="ba_party" value="7" onclick="popout_party_belonging()" /> Sonstige Partei, bitte angeben:
     <input type="text" name="ba_party_else">
 <br>
 {{ formfield_errors 'ba_party' }}
 <br>
+
 <br>
-<div class="mb-3 bg-light border pt-2 pb-2 px-2 ">
+<div class="mb-3 bg-light border pt-2 pb-2 px-2 "id ="party belonging" style=" display:none"  >
     <fieldset>
-        <div class="table">
+        <div class="table" >
             <table class="table"> <p><b>Wo würden Sie die Partei die Sie wählen würden auf dieser Skala einordnen,
                 wenn 0 für links und 11 für rechts?*</b></p>
                 <tbody>

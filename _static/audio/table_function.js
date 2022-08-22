@@ -18,18 +18,18 @@ function tableCreate(start, end) {
     tbl.style.width = "100%";
 
     // question list
-    const lst2 = ["eine ausdrucksstarke Person", // Q1
-        "eine Person mit außergewöhnlichen rednerischen Fähigkeiten", // Q2
-        "eine Person, die großen Einfluss auf andere Menschen hat", // Q3
-        "eine Person, die inspiriert", // Q4
-        "eine zuverlässige und glaubwürdige Person", // Q5
-        "eine ehrliche Person", // Q6
-        "eine attraktive Person", // Q7
-        "eine charmante Person", // Q8
-        "eine Person mit positiver Energie", // Q9
-        "eine Person mit einer Vision", // Q10
-        "eine dominante Person", // Q11
-        "eine Person, die Macht ausstrahlt" // Q12
+    const lst2 = ["eine ausdrucksstarke Person.", // Q1
+        "eine Person mit außergewöhnlichen rednerischen Fähigkeiten.", // Q2
+        "eine Person, die großen Einfluss auf andere Menschen hat.", // Q3
+        "eine Person, die inspiriert.", // Q4
+        "eine zuverlässige und glaubwürdige Person.", // Q5
+        "eine ehrliche Person.", // Q6
+        "eine attraktive Person.", // Q7
+        "eine charmante Person.", // Q8
+        "eine Person mit positiver Energie.", // Q9
+        "eine Person mit einer Vision.", // Q10
+        "eine dominante Person.", // Q11
+        "eine Person, die Macht ausstrahlt." // Q12
      ]
 
     Storage.prototype.getObj = function(key) {
