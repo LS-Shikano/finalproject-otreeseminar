@@ -104,7 +104,10 @@ class Player(BasePlayer):
     sm_group_assignment = models.IntegerField(initial=-999)
     #SmTreatmentPage
     sm_time_treatmentpage = models.StringField(initial=-999)
-    sm_participation = models.IntegerField(initial=-999)
+    sm_participation = models.IntegerField(initial=-999, blank=True)
+    def sm_participation_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie die Frage"
     #SmParticipationPage
     sm_time_participationpage = models.StringField(initial=-999)
     sm_topic_relevance = models.IntegerField(initial = -999)
@@ -143,7 +146,7 @@ class Player(BasePlayer):
     ba_ballot1 = models.IntegerField(initial=-999)
     ba_ballot_pic1 = models.IntegerField(initial=-999)
     ba_positioning = models.IntegerField(initial=-999)
-    ba_party_pos = models.IntegerField(initial=-999)
+    ba_party_pos = models.IntegerField(initial=-999, blank = True) #voluntary
     ba_opinion1 = models.IntegerField(initial=-999)
     ba_opinion2 = models.IntegerField(initial=-999)
     ba_opinion3 = models.IntegerField(initial=-999)
