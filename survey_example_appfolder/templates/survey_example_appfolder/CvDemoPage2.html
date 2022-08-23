@@ -25,6 +25,7 @@
 <input type="radio" class="persist" name="demonstration_participation_allowed" value="2" /> Nein
 <br>
 <input type="radio" class="persist" name="demonstration_participation_allowed" value="-999" /> Weiß nicht
+{{formfield_errors 'demonstration_participation_allowed' }}
 </div>
 
 <div class="mb-3 bg-light border pt-2 pb-2 px-2" >
@@ -34,6 +35,7 @@
 <input type="radio" class="persist" name="demonstration_participation_notallowed" value="2" /> Nein
 <br>
 <input type="radio" class="persist" name="demonstration_participation_notallowed" value="-999" /> Weiß nicht
+{{formfield_errors 'demonstration_participation_notallowed' }}
 </div>
 
 <div class="mb-3 bg-light border pt-2 pb-2 px-2" >
@@ -43,6 +45,7 @@
 <input type="radio" class="persist" name="demonstration_participation_online" value="2" /> Nein
 <br>
 <input type="radio" class="persist" name="demonstration_participation_online" value="-999" /> Weiß nicht
+{{formfield_errors 'demonstration_participation_online' }}
 </div>
 
 <div class="mb-3 bg-light border pt-2 pb-2 px-2" >
@@ -53,12 +56,13 @@
 <input type="radio" class="persist" name="social_media" value="2" /> Nein
 <br>
 <input type="radio" class="persist" name="social_media" value="-999" /> Weiß nicht
+{{formfield_errors 'social_media' }}
 </div>
 
-{{formfield_errors 'demonstration_participation_allowed' }}
-{{formfield_errors 'demonstration_participation_notallowed' }}
-{{formfield_errors 'demonstration_participation_online' }}
-{{formfield_errors 'social_media' }}
+
+
+
+
 
 
 <button class="otree-btn-next btn btn-primary next-button otree-next-button">

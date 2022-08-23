@@ -107,35 +107,98 @@ class Player(BasePlayer):
     sm_participation = models.IntegerField(initial=-999, blank=True)
     def sm_participation_error_message(player, value):
         if value not in [1, 2, 3, 4, 5, -888]:
-            return "Bitte beantworten Sie die Frage"
+            return "Bitte beantworten Sie das Pflichtfeld."
     #SmParticipationPage
     sm_time_participationpage = models.StringField(initial=-999)
-    sm_topic_relevance = models.IntegerField(initial = -999)
-    sm_familiar_people = models.IntegerField(initial=-999)
-    sm_booked = models.IntegerField(initial=-999)
-    sm_transportation = models.IntegerField(initial = -999)
-    sm_reach = models.IntegerField(initial=-999)
-    sm_number = models.IntegerField(initial=-999)
-    sm_crowd = models.IntegerField(initial=-999)
-    sm_polarization = models.IntegerField(initial=-999)
-    sm_riots = models.IntegerField(initial=-999)
+    sm_topic_relevance = models.IntegerField(initial = -999, blank=True)
+    def sm_topic_relevance_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    sm_familiar_people = models.IntegerField(initial=-999, blank=True)
+    def sm_familiar_people_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    sm_booked = models.IntegerField(initial=-999, blank=True)
+    def sm_booked_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    sm_transportation = models.IntegerField(initial = -999, blank=True)
+    def sm_transportation_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    sm_reach = models.IntegerField(initial=-999, blank=True)
+    def sm_reach_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    sm_number = models.IntegerField(initial=-999, blank=True)
+    def sm_number_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    sm_crowd = models.IntegerField(initial=-999, blank=True)
+    def sm_crowd_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    sm_polarization = models.IntegerField(initial=-999, blank=True)
+    def sm_polarization_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    sm_riots = models.IntegerField(initial=-999, blank=True)
+    def sm_riots_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
     sm_participation_else = models.StringField(blank=True) #voluntary
     #SmPoliticalPage
     sm_time_politicalpage = models.StringField(initial=-999)
-    sm_missing_knowledge = models.IntegerField(initial=-999)
-    sm_own_knowledge = models.IntegerField(initial=-999)
-    sm_general_knowledge = models.IntegerField(initial=-999)
-    sm_future = models.IntegerField(initial=-999)
-    sm_unsure = models.IntegerField(initial=-999)
-    sm_olddays = models.IntegerField(initial=-999)
+    sm_missing_knowledge = models.IntegerField(initial=-999, blank=True)
+    def sm_rmissing_knowledge_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    sm_own_knowledge = models.IntegerField(initial=-999, blank=True)
+    def sm_own_knowledge_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    sm_general_knowledge = models.IntegerField(initial=-999, blank=True)
+    def sm_general_knowledge_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    sm_future = models.IntegerField(initial=-999, blank=True)
+    def sm_future_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    sm_unsure = models.IntegerField(initial=-999, blank=True)
+    def sm_unsure_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    sm_olddays = models.IntegerField(initial=-999, blank=True)
+    def sm_olddays_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
     #SmDemonstrationPage
     sm_time_demonstrationpage = models.StringField(initial=-999)
-    sm_demonstration_change = models.IntegerField(initial=-999)
-    sm_demonstration_democracy = models.IntegerField(initial=-999)
-    sm_demonstration_views = models.IntegerField(initial=-999)
-    sm_politicians = models.IntegerField(initial=-999)
-    sm_influence = models.IntegerField(initial=-999)
-    sm_interests = models.IntegerField(initial=-999)
+    sm_demonstration_change = models.IntegerField(initial=-999, blank=True)
+    def sm_demonstration_change_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    sm_demonstration_democracy = models.IntegerField(initial=-999, blank=True)
+    def sm_demonstration_democracy_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    sm_demonstration_views = models.IntegerField(initial=-999, blank=True)
+    def sm_demonstration_views_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    sm_politicians = models.IntegerField(initial=-999, blank=True)
+    def sm_politicians_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    sm_influence = models.IntegerField(initial=-999, blank=True)
+    def sm_influence_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    sm_interests = models.IntegerField(initial=-999, blank=True)
+    def sm_interests_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
 
 
     # Ballot variables
@@ -214,22 +277,70 @@ class Player(BasePlayer):
 
 
     # control variables
-    therm_spd = models.IntegerField(initial=-999)
-    therm_cdu = models.IntegerField(initial=-999)
-    therm_csu = models.IntegerField(initial=-999)
-    therm_gruene = models.IntegerField(initial=-999)
-    therm_fdp = models.IntegerField(initial=-999)
-    therm_afd = models.IntegerField(initial=-999)
-    therm_linke = models.IntegerField(initial=-999)
-    household_income = models.IntegerField(initial=-999)
-    general_education = models.IntegerField(initial=-999)
-    ba_location = models.IntegerField(initial=-999)
+    therm_spd = models.IntegerField(initial=-999, blank=True)
+    def therm_spd_error_message(player, value):
+        if value not in [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    therm_cdu = models.IntegerField(initial=-999, blank=True)
+    def therm_cdu_error_message(player, value):
+        if value not in [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    therm_csu = models.IntegerField(initial=-999, blank=True)
+    def therm_csu_error_message(player, value):
+        if value not in [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    therm_gruene = models.IntegerField(initial=-999, blank=True)
+    def therm_gruene_error_message(player, value):
+        if value not in [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    therm_fdp = models.IntegerField(initial=-999, blank=True)
+    def therm_fdp_error_message(player, value):
+        if value not in [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    therm_afd = models.IntegerField(initial=-999, blank=True)
+    def therm_afd_error_message(player, value):
+        if value not in [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    therm_linke = models.IntegerField(initial=-999, blank=True)
+    def therm_linke_error_message(player, value):
+        if value not in [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    household_income = models.IntegerField(blank=True)
+    def household_income_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, -888, -999]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    general_education = models.IntegerField(initial=-999, blank=True)
+    def general_education_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, 6, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    ba_location = models.IntegerField(initial=-999, blank=True)
+    def ba_location_error_message(player, value):
+        if value not in [1, 2, 3, 4, 5, -888]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
     ba_immigration1 = models.StringField(blank=True)
     ba_immigration2 = models.StringField(blank=True)
     ba_immigration3 = models.StringField(blank=True)
-    eligibility = models.IntegerField(initial=-999)
-    participation = models.IntegerField(initial=-999)
-    demonstration_participation_allowed = models.IntegerField(initial=-999)
-    demonstration_participation_notallowed = models.IntegerField(initial=-999)
-    demonstration_participation_online = models.IntegerField(initial=-999)
-    social_media = models.IntegerField(initial=-999)
+    eligibility = models.IntegerField(initial=-999, blank=True)
+    def eligibility_error_message(player, value):
+        if value not in [1, 2, -888, -999]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    participation = models.IntegerField(initial=-999, blank=True)
+    def participation_error_message(player, value):
+        if value not in [1, 2, -888, -999]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    demonstration_participation_allowed = models.IntegerField(blank=True)
+    def demonstration_participation_allowed_error_message(player, value):
+        if value not in [1, 2, -999]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    demonstration_participation_notallowed = models.IntegerField(blank=True)
+    def demonstration_participation_notallowed_error_message(player, value):
+        if value not in [1, 2, -999]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    demonstration_participation_online = models.IntegerField(blank=True)
+    def demonstration_participation_online_error_message(player, value):
+        if value not in [1, 2, -999]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
+    social_media = models.IntegerField(blank=True)
+    def social_media_online_error_message(player, value):
+        if value not in [1, 2, -999]:
+            return "Bitte beantworten Sie alle Pflichtfelder."
