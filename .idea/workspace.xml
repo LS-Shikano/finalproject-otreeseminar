@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2e095d6-6ad8-4fd9-a7f7-741709872a01" name="Changes" comment="" />
+    <list default="true" id="f2e095d6-6ad8-4fd9-a7f7-741709872a01" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/survey_example_appfolder/templates/survey_example_appfolder/BaIdeology1.html" beforeDir="false" afterPath="$PROJECT_DIR$/survey_example_appfolder/templates/survey_example_appfolder/BaIdeology1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/survey_example_appfolder/templates/survey_example_appfolder/BaIdeology2.html" beforeDir="false" afterPath="$PROJECT_DIR$/survey_example_appfolder/templates/survey_example_appfolder/BaIdeology2.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +41,8 @@
       <updated>1661155958376</updated>
       <workItem from="1661155962435" duration="85000" />
       <workItem from="1661156064788" duration="4547000" />
-      <workItem from="1661342261648" duration="4395000" />
+      <workItem from="1661342261648" duration="4417000" />
+      <workItem from="1661428017528" duration="415000" />
     </task>
     <servers />
   </component>
